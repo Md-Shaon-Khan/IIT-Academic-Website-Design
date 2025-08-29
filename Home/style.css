@@ -15,7 +15,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -74,13 +75,13 @@ body {
 }
 
 .brand {
-  margin-left: 20px;   /* flush left */
+  margin-left: 20px; /* flush left */
 }
 .nav-item {
-  position: relative;  /* required for absolute submenu */
+  position: relative; /* required for absolute submenu */
 }
 .brand img {
-  height: 80px;     /* larger logo */
+  height: 80px; /* larger logo */
   width: auto;
   display: block;
 }
@@ -198,15 +199,15 @@ body {
   z-index: 1;
   text-align: left;
   max-width: 600px;
-  margin-left: 8%;  /* keep this */
+  margin-left: 8%; /* keep this */
 }
 
 .hero__explore {
   display: flex;
-  justify-content: center;  /* center horizontally */
-  position: absolute;       /* allow bottom positioning */
-  bottom: 25px;             /* 10–15px from bottom */
-  width: 100%;              /* full width to center flex */
+  justify-content: center; /* center horizontally */
+  position: absolute; /* allow bottom positioning */
+  bottom: 25px; /* 10–15px from bottom */
+  width: 100%; /* full width to center flex */
 }
 
 .hero__explore .btn {
@@ -225,9 +226,6 @@ body {
   background: var(--color-accent-alt);
   color: #fff;
 }
-
-
-
 
 .hero__title {
   font-size: 4rem;
