@@ -196,16 +196,34 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  background: url("images/Home_Background.webp") no-repeat center center / cover;
+  /*background: url("images/Home_Background.webp") no-repeat center center / cover;*/
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+.hero__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  filter: brightness(70%) blur(2px); /* makes video dim & not fully clear */
+  object-fit: cover; /* makes sure the video covers the section */
+  z-index: -2; /* keeps video at the very back */
+}
 .hero__overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+/*  inset: 0;
+  background: rgba(0, 0, 0, 0.55);*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* darker overlay for readability */
+  z-index: -1;
 }
 .hero__content {
   position: relative;
@@ -307,20 +325,6 @@ body {
 */
 
 /* ===============================
-   Footer
-   =============================== */
-.site-footer {
-  background: #0a0f1c;
-  padding: 1.5rem 0;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #222;
-}
-.site-footer span {
-  color: var(--color-accent);
-}
-
-/* ===============================
    Responsive Design
    =============================== */
 @media (max-width: 768px) {
@@ -340,5 +344,443 @@ body {
   }
   .nav-toggle {
     display: flex;
+  }
+}
+
+
+/* ===== Discover Section Styling ===== */
+.discover {
+  position: relative;              /* Needed so video and text can be layered */
+  height: 100vh;                   /* Full screen height */
+  display: flex;                   
+  align-items: center;             /* Center text vertically */
+  justify-content: center;         /* Center text horizontally */
+  color: #fff;                     /* White text for contrast */
+  overflow: hidden;                /* Hide any video overflow */
+}
+
+/* ===== Background Video ===== */
+.discover__video {
+  position: absolute;              /* Place video behind text */
+  top: 0;
+  left: 0;
+  width: 100%;                     /* Full width */
+  height: 100%;                    /* Full height */
+  object-fit: cover;               /* Crop video like background image */
+  z-index: -1;                     /* Push behind content */
+  filter: brightness(60%);         /* Darken video for readability */
+}
+
+/* ===== Content (text & button) ===== */
+.discover__content {
+  position: relative;              /* Keep text above video */
+  max-width: 800px;                /* Limit width of content */
+  text-align: center;              /* Center align text */
+  z-index: 1;                      /* Ensure it's above the video */
+}
+
+/* Title styling */
+.discover__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph styling */
+.discover__text {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.btn.btn-outline {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn.btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+/* ---------- About Section ---------- */
+.about {
+  background: url('images/about\ back\ 2.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: #fff; /* optional: text color over darkened background */
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);      /* blur effect */
+  background-color: rgba(0, 0, 0, 0.5); /* optional dark overlay for readability */
+  z-index: 0;
+   
+}
+
+
+
+/* Make container content appear above the blur overlay */
+.about .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about__title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+/* Horizontal flow container */
+.about__flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Horizontal connecting line */
+.about__flow::before {
+  content: '';
+  position: absolute;
+  top: 25px; /* vertical position relative to icons */
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #eceef1; /* blue line for tech feel */
+  z-index: 1;
+}
+
+/* Each segment */
+.about__segment {
+  flex: 1;
+  max-width: 30%;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* above the line */
+  padding-top: 0px;
+  padding-bottom: 8px;
+}
+
+/* Icon styles */
+.about__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(236, 240, 240, 0.995);
+  overflow: hidden;
+}
+
+.about__icon img {
+  width: 100%;       /* ensure full width */
+  height: 100%;      /* ensure full height */
+  object-fit: cover; /* make image cover circle */
+}
+
+/* Headings */
+.about__heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+/* Text */
+.about__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about__segment {
+    max-width: 45%;
+    margin-bottom: 40px;
+  }
+
+  .about__flow::before {
+    top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__segment {
+    max-width: 80%;
+  }
+
+  .about__flow::before {
+    display: none; /* remove horizontal line on mobile */
+  }
+}
+
+
+/* ---------- FAQ Section ---------- */
+/* ---------- FAQ Section ---------- */
+.faqs {
+  position: relative;
+  padding: 60px 20px; /* section padding */
+  background: url('images/faqs\ back.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Overlay for readability */
+.faqs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: 0;
+}
+
+/* Content container above overlay */
+.faqs .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Section title */
+.faqs__title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+/* FAQ Box */
+.faqs__box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Columns container */
+.faqs__columns {
+  display: flex;
+  gap: 20px;            /* space between columns */
+  flex-wrap: wrap;       /* wrap on smaller screens */
+}
+
+/* Individual column */
+.faqs__column {
+  flex: 1;              /* equal width */
+  min-width: 280px;     /* prevent too narrow on small screens */
+}
+
+/* FAQ Entry */
+.faq__entry {
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  background-color: #fff;
+}
+
+/* Hover effect */
+.faq__entry:hover {
+  background-color: #f0e6ff;
+}
+
+/* FAQ Question */
+.faq__question {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+/* FAQ Answer (hidden by default) */
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Active / Expanded FAQ Answer */
+.faq__entry.active .faq__answer {
+  max-height: 500px;  /* adjust if answers are longer */
+  padding: 10px 0;    /* spacing inside answer */
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .faqs__columns {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faqs__columns {
+    flex-direction: column; /* single column on mobile */
+  }
+}
+
+
+/* ---------- Footer Section ---------- */
+.iit-footer {
+  background-color: #111; /* dark background */
+  color: #fff;
+  padding: 60px 20px 40px; /* top, sides, bottom */
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+/* Container */
+.iit-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Columns layout */
+.iit-footer__columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px; /* spacing between columns */
+  margin-bottom: 40px;
+}
+
+/* Individual column */
+.iit-footer__column {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Logo */
+.iit-footer__logo img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+/* Info block under logo */
+.iit-footer__info p {
+  font-size: 0.875rem;
+  margin: 4px 0;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Column headings */
+.iit-footer__heading {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Links inside columns */
+.iit-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.iit-footer__links li {
+  margin-bottom: 10px;
+}
+
+.iit-footer__links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.iit-footer__links li a:hover {
+  color: #7c4dff; /* highlight on hover */
+}
+
+/* Social media icons row */
+.iit-footer__social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.iit-footer__social .social-icon {
+display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;           /* icon color */
+  font-size: 18px;       /* icon size */
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.iit-footer__social .social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.iit-footer__social .social-icon:hover {
+  background-color: #7c4dff; /* hover effect */
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .iit-footer__columns {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .iit-footer__columns {
+    flex-direction: column; /* stack columns vertically */
+  }
+  
+  .iit-footer__social .social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
   }
 }
