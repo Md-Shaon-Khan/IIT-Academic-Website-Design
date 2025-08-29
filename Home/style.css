@@ -73,9 +73,15 @@ body {
   padding: 1rem 2%; /* small padding for top/bottom, minimal for left/right */
   position: relative;
 }
+.navbar.container {
+  padding-left: 0;   /* remove default left padding */
+  padding-right: 2%; /* optional: right padding ঠিক রাখুন */
+}
 
 .brand {
-  margin-left: 20px; /* flush left */
+  margin-left: 20px;
+  display: flex;        
+  align-items: center; /* flush left */
 }
 .nav-item {
   position: relative; /* required for absolute submenu */
@@ -125,6 +131,7 @@ body {
   color: var(--color-text-light);
   text-decoration: none;
   transition: background 0.3s;
+  white-space: nowrap; 
 }
 
 .dropdown-link:hover {
@@ -144,21 +151,27 @@ body {
 .dropdown-menu-sub {
   position: absolute;
   top: 0;
-  left: 100%; /* position to the right of parent */
+  left: auto; /* position to the right of parent */
+  right:100%;
   background: rgba(10, 15, 28, 0.95);
   list-style: none;
   padding: 0.5rem 0;
   margin: 0;
   display: none;
   border-radius: 6px;
-  min-width: 160px;
+  min-width: 200px;
   z-index: 1000;
 }
-
+/* Rightmost dropdown flips to left */
+.nav-item.dropdown:last-child .dropdown-subitem:hover > .dropdown-menu-sub {
+  left: auto;   /* remove default left */
+  right: 100%;  /* open to the left */
+}
 /* Show nested submenu on hover */
 .dropdown-subitem:hover > .dropdown-menu-sub {
   display: block;
 }
+
 
 /* Hamburger Button */
 .nav-toggle {
@@ -183,7 +196,7 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  background: url("../images/earth-night.jpg") no-repeat center center / cover;
+  background: url("images/Home_Background.webp") no-repeat center center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
