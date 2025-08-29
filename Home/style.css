@@ -1,0 +1,333 @@
+/* ===============================
+   Global Styles
+   =============================== */
+:root {
+  --color-bg-dark: #0a0f1c;
+  --color-text-light: #f5f5f5;
+  --color-accent: #3fa9f5;
+  --color-accent-alt: #2ecc71;
+  --font-main: "Inter", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--color-text-light);
+  background: linear-gradient(135deg, #e6eef7, #cdd6e8, #8fa1c7);
+}
+
+/* ===============================
+   Skip Link (Accessibility)
+   =============================== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===============================
+   Container Utility
+   =============================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   Header & Navigation
+   =============================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 15, 28, 0.6); /* semi-transparent */
+  z-index: 999;
+  backdrop-filter: blur(6px);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, links right */
+  padding: 1rem 2%; /* small padding for top/bottom, minimal for left/right */
+  position: relative;
+}
+
+.brand {
+  margin-left: 20px;   /* flush left */
+}
+.nav-item {
+  position: relative;  /* required for absolute submenu */
+}
+.brand img {
+  height: 80px;     /* larger logo */
+  width: auto;
+  display: block;
+}
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(10, 15, 28, 0.95);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-link:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.nav-item.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Submenu for 1st Semester subjects */
+.dropdown-subitem {
+  position: relative; /* needed for nested submenu */
+}
+
+.dropdown-menu-sub {
+  position: absolute;
+  top: 0;
+  left: 100%; /* position to the right of parent */
+  background: rgba(10, 15, 28, 0.95);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+/* Show nested submenu on hover */
+.dropdown-subitem:hover > .dropdown-menu-sub {
+  display: block;
+}
+
+/* Hamburger Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--color-text-light);
+}
+
+/* ===============================
+   Hero Section
+   =============================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("../images/earth-night.jpg") no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  max-width: 600px;
+  margin-left: 8%;  /* keep this */
+}
+
+.hero__explore {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  position: absolute;       /* allow bottom positioning */
+  bottom: 25px;             /* 10–15px from bottom */
+  width: 100%;              /* full width to center flex */
+}
+
+.hero__explore .btn {
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid var(--color-accent-alt);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.hero__explore .btn:hover {
+  background: var(--color-accent-alt);
+  color: #fff;
+}
+
+
+
+
+.hero__title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.hero__subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.hero__actions {
+  display: flex;
+  justify-content: flex-start; /* align left */
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #1d85c6;
+}
+.btn-outline {
+  border: 2px solid var(--color-accent-alt);
+  color: var(--color-accent-alt);
+}
+.btn-outline:hover {
+  background: var(--color-accent-alt);
+  color: #fff;
+}
+
+/* ===============================
+   Explore Section
+   =============================== */
+/*.explore-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0; 
+}
+
+.explore-button {
+  width: 60px;     
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.explore-button:hover {
+  background: var(--color-accent);
+  transform: scale(1.1);
+}
+*/
+
+/* ===============================
+   Footer
+   =============================== */
+.site-footer {
+  background: #0a0f1c;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+.site-footer span {
+  color: var(--color-accent);
+}
+
+/* ===============================
+   Responsive Design
+   =============================== */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(10, 15, 28, 0.95);
+    flex-direction: column;
+    width: 220px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-menu.active {
+    max-height: 300px;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
