@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Final Projects - 1st year</title>
+    <meta
+      name="description"
+      content="Landing page for the academic section of the Institute of Information Technology (IIT), Jahangirnagar University."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global stylesheet -->
+    <link rel="stylesheet" href="../nav_foot.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header / Top navigation -->
+    <header class="site-header" id="site-header" aria-label="Top Navigation">
+      <div id="navbar"></div>
+    </header>
+
+    <main id="main-content" class="main py-5" tabindex="-1">
+    <section class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Main Projects</h2>
+        <p class="section-description">First Year Projects by Batch</p>
+        <div class="btn-group filter-buttons mt-3" role="group">
+          <a href="52/index.html" class="btn">Batch 52</a>
+          <a href="51/index.html" class="btn">Batch 51</a>
+          <a href="50/index.html" class="btn">Batch 50</a>
+        </div>
+      </div>
+
+        <section class="container mb-5">
+          <h3 class="mb-3">Batch 52</h3>
+          <div id="batch-52-projects" class="scroll-row"></div>
+        </section>
+
+        <section class="container mb-5">
+          <h3 class="mb-3">Batch 51</h3>
+          <div id="batch-51-projects" class="scroll-row"></div>
+        </section>
+
+        <section class="container mb-5">
+          <h3 class="mb-3">Batch 50</h3>
+          <div id="batch-50-projects" class="scroll-row"></div>
+        </section>
+
+    </section>
+  </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+    <script>
+      fetch('../navbar.html')
+        .then((response) => response.text())
+        .then((html) => (document.getElementById('navbar').innerHTML = html));
+      fetch('../footer.html')
+        .then((response) => response.text())
+        .then((html) => (document.getElementById('footer').innerHTML = html));
+    </script>
+    
+    <script>
+        function loadBatchProjects(batchFile, containerId) {
+          fetch(batchFile)
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, "text/html");
+              
+              // Grab only the project cards from the batch page
+              const cards = doc.querySelectorAll(".project-card");
+              const container = document.getElementById(containerId);
+
+              cards.forEach(card => {
+                container.appendChild(card.cloneNode(true));
+              });
+            })
+            .catch(err => console.error("Error loading batch:", err));
+        }
+
+      // Load batches
+      loadBatchProjects("Batch-52/index.html", "batch-52-projects");
+      loadBatchProjects("Batch-51/index.html", "batch-51-projects");
+      loadBatchProjects("Batch-50/index.html", "batch-50-projects");
+      </script>
+
+    
+  </body>
+</html>

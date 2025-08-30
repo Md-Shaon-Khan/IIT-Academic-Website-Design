@@ -1,0 +1,80 @@
+body{
+  /* background: linear-gradient(135deg,#050011, #1d116b, #532185, #1d116b,  #050011); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: #b0c4de;
+}
+
+.filter-buttons .btn {
+  margin: 0 5px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.filter-buttons .btn:hover {
+  background-color: #1e3a5f;
+  color: #fff;
+}
+
+.project-card {
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.project-card .card-body {
+  padding: 1rem 1.5rem;
+}
+
+.project-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0b1c2c;
+}
+
+.project-card .card-text {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.project-card img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* scroll-row */
+.scroll-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;        /*Firefox */
+}
+
+.scroll-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+.scroll-row .project-card {
+  min-width: 320px;  /* each card has fixed width */
+  flex: 0 0 auto;
+}
