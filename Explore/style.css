@@ -1,0 +1,347 @@
+/* ====== Global Styles ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ====== Hero Section ====== */
+/* ====== Hero Section ====== */
+#hero {
+  height: 80vh;
+  background: url('images/hero\ bg.jpg') center center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* overlay */
+  z-index: 1;
+}
+
+#hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Buttons Container */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Hero Buttons */
+#hero button,
+#hero .home-btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Start Exploring Button */
+#hero button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+#hero button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Home Button */
+#hero .home-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  line-height: 1.2;
+  padding: 10px 25px;
+}
+
+#hero .home-btn:hover {
+  background-color: white;
+  color: #007bff;
+  transform: scale(1.05);
+}
+
+/* ====== Sections ====== */
+
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section header h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+section header p {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ====== Cards Layout ====== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ====== Clubs Cards Images ====== */
+#clubs {
+  padding: 60px 20px;
+  background-color: #f1f4f8; /* light neutral background for whole section */
+  border-radius: 10px; /* subtle rounded corners */
+  max-width: 1200px; /* optional width limit */
+  margin: 50px auto; /* center the section */
+}
+
+/* Header styling */
+#clubs header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #007bff;
+}
+
+#clubs header p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Cards Container */
+#clubs .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Card */
+#clubs .card {
+  background-color: white; /* card background stays white */
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+#clubs .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#clubs .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+#clubs .card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+#clubs .card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ====== Events Section ====== */
+/* ====== Events Section Background ====== */
+#events {
+  padding: 60px 20px;
+  background-color: #f1f4f8; /* light neutral background for the whole section */
+  border-radius: 10px; /* optional subtle rounding for section edges */
+  max-width: 1200px; /* optional width limit */
+  margin: 50px auto; /* center the section on the page */
+}
+
+/* Header styling */
+#events header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #007bff;
+}
+
+#events header p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Each category container */
+.events-category {
+  margin-bottom: 50px;
+}
+
+.events-category h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+/* Cards Container */
+.events-category .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Card */
+.events-category .card {
+  background-color: white; /* card background stays white */
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.events-category .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.events-category .card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.events-category .card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Optional: Different border-top for Upcoming vs Completed */
+.events-category:nth-of-type(1) .card {
+  border-top: 4px solid #28a745; /* green for upcoming */
+}
+
+.events-category:nth-of-type(2) .card {
+  border-top: 4px solid #6c757d; /* gray for completed */
+}
+
+/* ====== Footer ====== */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+}
+
+footer a {
+  color: #fff;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
