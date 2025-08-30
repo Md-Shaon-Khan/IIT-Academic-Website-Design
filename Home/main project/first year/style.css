@@ -48,6 +48,12 @@ body{
 .project-card .card-text {
   font-size: 0.95rem;
   color: #333;
+  font-family: sans-serif;
+}
+.project-card .card-caption {
+  font-size: 0.8rem;
+  color: #666;
+
 }
 
 .project-card img {
@@ -75,6 +81,8 @@ body{
 }
 
 .scroll-row .project-card {
-  min-width: 320px;  /* each card has fixed width */
   flex: 0 0 auto;
+  width: 500px;   /* match the column size used on batch page */
+  margin-right: 1rem;
 }
+
