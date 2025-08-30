@@ -50,6 +50,7 @@
               alt="Jahangirnagar University"
               id="juLogo"
             />
+            <span class="brand-text">Jahangirnagar University</span>
           </a>
 
           <!-- Hamburger for mobile -->
@@ -354,12 +355,8 @@
         <section
           class="hero"
           aria-label="Welcome section"
-          data-hero-bg="assets/images/earth-night.jpg"
+          style="background-image: url('images/Home_Background.webp')"
         >
-          <video class="hero__video" autoplay muted loop playsinline>
-            <source src="Video/home background.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
           <!-- Optional dark overlay handled in CSS -->
           <div class="hero__overlay" aria-hidden="true"></div>
 
@@ -476,55 +473,57 @@
             <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
           </svg>
         </div>
+
+
         <!--About Section-->
-        <section class="about">
-          <div class="container">
-            <!-- Section Title -->
-            <h2 class="about__title">About</h2>
+<!-- About Section -->
+<section class="about">
+  <div class="about__container">
+    <!-- Section Title -->
+    <h2 class="about__title">About</h2>
 
-            <!-- Horizontal Flow Line -->
-            <div class="about__flow">
-              <!-- Segment 1: Purpose -->
-              <div class="about__segment">
-                <div class="about__icon">
-                  <!-- Example icon: archive/folder -->
-                  <img src="images/about purpose.jpg" alt="Purpose Icon" />
-                </div>
-                <h3 class="about__heading">Purpose</h3>
-                <p class="about__text">
-                  To provide IIT students with a centralized, structured archive
-                  of academic questions and projects.
-                </p>
-              </div>
+    <!-- Horizontal Flow -->
+    <div class="about__flow">
+      <!-- Segment 1: Purpose -->
+      <div class="about__segment">
+        <button class="about__icon-btn" data-text="purpose">
+          <i class="fa fa-archive"></i>
+        </button>
+        <h3 class="about__label">Purpose</h3>
+        <p class="about__text hidden-text" id="text-purpose">
+          To provide IIT students with a centralized, structured archive
+          of academic questions and projects.
+        </p>
+      </div>
 
-              <!-- Segment 2: Feature -->
-              <div class="about__segment">
-                <div class="about__icon">
-                  <!-- Example icon: folder/project -->
-                  <img src="images/about features.jpg" alt="Feature Icon" />
-                </div>
-                <h3 class="about__heading">Feature</h3>
-                <p class="about__text">
-                  Question bank by course and section • Project repository with
-                  documentation • Smart categorization for quick access
-                </p>
-              </div>
+      <!-- Segment 2: Feature -->
+      <div class="about__segment">
+        <button class="about__icon-btn" data-text="feature">
+          <i class="fa fa-folder-open"></i>
+        </button>
+        <h3 class="about__label">Feature</h3>
+        <p class="about__text hidden-text" id="text-feature">
+          Question bank by course and section Project repository with
+          documentation Smart categorization for quick access.
+        </p>
+      </div>
 
-              <!-- Segment 3: Mission -->
-              <div class="about__segment">
-                <div class="about__icon">
-                  <!-- Example icon: lightbulb/innovation -->
-                  <img src="images/about mission.jpg" alt="Mission Icon" />
-                </div>
-                <h3 class="about__heading">Mission</h3>
-                <p class="about__text">
-                  To preserve academic resources, foster collaboration, and
-                  inspire continuous innovation within IIT.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <!-- Segment 3: Mission -->
+      <div class="about__segment">
+        <button class="about__icon-btn" data-text="mission">
+          <i class="fa-solid fa-bullseye"></i>
+        </button>
+        <h3 class="about__label">Mission</h3>
+        <p class="about__text hidden-text" id="text-mission">
+          To preserve academic resources, foster collaboration, and
+          inspire continuous innovation within IIT.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
         <div class="divider">
           <svg
@@ -536,90 +535,62 @@
           </svg>
         </div>
         <!--FAQS-->
+        <!--FAQS-->
         <section class="faqs">
-          <div class="container">
-            <!-- Section Title -->
-            <h2 class="faqs__title">Frequently Asked Questions</h2>
+          <div class="faqs__container">
+            <!-- Left Column: Title + FAQs -->
+            <div class="faqs__left">
+              <h2 class="faqs__title">Frequently Asked Questions</h2>
 
-            <!-- FAQ Box -->
-            <div class="faqs__box">
-              <div class="faqs__columns">
-                <!-- Left Column -->
-                <div class="faqs__column">
-                  <!-- Entry 1 -->
-                  <div class="faq__entry">
-                    <h3 class="faq__question">What is IIT Academic Website</h3>
-                    <div class="faq__answer">
-                      <p>
-                        The IIT Academic Website is a centralized platform for
-                        academic resources.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Entry 2 -->
-                  <div class="faq__entry">
-                    <h3 class="faq__question">Who can upload the question</h3>
-                    <div class="faq__answer">
-                      <p>Only authorized faculty can upload questions.</p>
-                    </div>
-                  </div>
-
-                  <!-- Entry 3 -->
-                  <div class="faq__entry">
-                    <h3 class="faq__question">
-                      Who can upload the Project and Thesis Paper
-                    </h3>
-                    <div class="faq__answer">
-                      <p>
-                        Students can upload projects and thesis papers after
-                        approval.
-                      </p>
-                    </div>
+              <div class="faqs__box">
+                <div class="faq__entry">
+                  <h3 class="faq__question">What is IIT Academic Website</h3>
+                  <div class="faq__answer">
+                    <p>
+                      The IIT Academic Website is a centralized platform for
+                      academic resources.
+                    </p>
                   </div>
                 </div>
 
-                <!-- Right Column -->
-                <div class="faqs__column">
-                  <!-- Entry 4 -->
-                  <div class="faq__entry">
-                    <h3 class="faq__question">How to access past questions</h3>
-                    <div class="faq__answer">
-                      <p>
-                        Past questions are available by course and semester in
-                        the archive.
-                      </p>
-                    </div>
+                <div class="faq__entry">
+                  <h3 class="faq__question">Who can upload the question</h3>
+                  <div class="faq__answer">
+                    <p>Only authorized faculty can upload questions.</p>
                   </div>
+                </div>
 
-                  <!-- Entry 5 -->
-                  <div class="faq__entry">
-                    <h3 class="faq__question">
-                      Can external users view resources
-                    </h3>
-                    <div class="faq__answer">
-                      <p>
-                        Only registered IIT students and faculty can access the
-                        resources.
-                      </p>
-                    </div>
+                <div class="faq__entry">
+                  <h3 class="faq__question">
+                    Who can upload the Project and Thesis Paper
+                  </h3>
+                  <div class="faq__answer">
+                    <p>
+                      Students can upload projects and thesis papers after
+                      approval.
+                    </p>
                   </div>
+                </div>
 
-                  <!-- Entry 6 -->
-                  <div class="faq__entry">
-                    <h3 class="faq__question">Is there a search feature</h3>
-                    <div class="faq__answer">
-                      <p>
-                        Yes, the website has a smart search and filter for quick
-                        access.
-                      </p>
-                    </div>
+                <div class="faq__entry">
+                  <h3 class="faq__question">How to access past questions</h3>
+                  <div class="faq__answer">
+                    <p>
+                      Past questions are available by course and semester in the
+                      archive.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Right Column: Image -->
+            <div class="faqs__right">
+              <img src="images/computer lab.jpg" alt="FAQ Image" />
+            </div>
           </div>
         </section>
+
         <div class="divider">
           <svg
             xmlns="http://www.w3.org/2000/svg"

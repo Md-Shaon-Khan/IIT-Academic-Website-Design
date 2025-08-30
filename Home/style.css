@@ -95,14 +95,22 @@ body {
   margin-left: 20px;
   display: flex;
   align-items: center; /* flush left */
+  text-decoration: none;
+  gap: 10px;
 }
 .nav-item {
   position: relative; /* required for absolute submenu */
 }
 .brand img {
-  height: 80px; /* larger logo */
+  height: 90px; /* larger logo */
   width: auto;
   display: block;
+}
+.brand-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff; /* JU’s dark blue shade */
+  white-space: nowrap; /* prevent wrapping */
 }
 .nav-menu {
   display: flex;
@@ -208,24 +216,26 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  /*background: url("images/Home_Background.webp") no-repeat center center / cover;*/
+  background: url("images/Home_Background.webp") no-repeat center center / cover;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  
 }
-.hero__video {
+/* .hero__video {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  filter: brightness(70%) blur(2px); /* makes video dim & not fully clear */
-  object-fit: cover; /* makes sure the video covers the section */
-  z-index: -2; /* keeps video at the very back */
-}
+  filter: brightness(70%) blur(2px);  makes video dim & not fully clear 
+  object-fit: cover;  makes sure the video covers the section 
+  z-index: -2;  keeps video at the very back 
+} */
+
 .hero__overlay {
   position: absolute;
   /*  inset: 0;
@@ -235,7 +245,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.35); /* darker overlay for readability */
-  z-index: -1;
+  z-index: 0;
 }
 .hero__content {
   position: relative;
@@ -271,15 +281,17 @@ body {
 }
 
 .hero__title {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
+  letter-spacing: 2px;
 }
 .hero__subtitle {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
   font-weight: 400;
 }
+
 .hero__actions {
   display: flex;
   justify-content: flex-start; /* align left */
@@ -418,11 +430,12 @@ body {
 }
 
 /* ---------- About Section ---------- */
+/* About Section */
 .about {
-  background: url("images/about\ back\ 2.jpg") no-repeat center center;
+  background: url("images/about back 2.jpg") no-repeat center center;
   background-size: cover;
   position: relative;
-  color: #fff; /* optional: text color over darkened background */
+  color: #fff;
 }
 
 .about::before {
@@ -432,50 +445,45 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(8px); /* blur effect */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* optional dark overlay for readability */
+  backdrop-filter: blur(8px);
+  background-color: rgba(0,0,0,0.5);
   z-index: 0;
 }
 
-/* Make container content appear above the blur overlay */
-.about .container {
+.about__container {
   position: relative;
   z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
 .about__title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
   margin-bottom: 60px;
   color: #fff;
 }
 
-/* Horizontal flow container */
+/* Horizontal flow */
 .about__flow {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  position: relative;
   gap: 40px;
   flex-wrap: wrap;
+  position: relative;
 }
 
-/* Horizontal connecting line */
 .about__flow::before {
   content: "";
   position: absolute;
-  top: 25px; /* vertical position relative to icons */
+  top: 50px;
   left: 0;
   right: 0;
   height: 4px;
-  background: #eceef1; /* blue line for tech feel */
+  background: #eceef1;
   z-index: 1;
 }
 
@@ -485,46 +493,58 @@ body {
   max-width: 30%;
   text-align: center;
   position: relative;
-  z-index: 2; /* above the line */
-  padding-top: 0px;
-  padding-bottom: 8px;
+  z-index: 2;
 }
 
-/* Icon styles */
-.about__icon {
+/* Icon button (less bright circle) */
+.about__icon-btn {
   width: 80px;
   height: 80px;
-  margin: 0 auto 20px auto;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #e0e0e0; /* less bright / soft gray */
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(236, 240, 240, 0.995);
-  overflow: hidden;
+  margin: 0 auto 10px auto;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.about__icon img {
-  width: 100%; /* ensure full width */
-  height: 100%; /* ensure full height */
-  object-fit: cover; /* make image cover circle */
+.about__icon-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background-color: #d1d1d1; /* subtle hover change */
 }
 
-/* Headings */
-.about__heading {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-family: "Roboto", sans-serif;
+/* Label under icon */
+.about__label {
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #fff;
+  margin-bottom: 5px;
 }
 
-/* Text */
-.about__text {
+/* Hidden text initially */
+.hidden-text {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
+  color: #fff;
   font-size: 1rem;
   line-height: 1.6;
-  color: #fff;
-  font-family: "Open Sans", sans-serif;
+  margin-top: 0;
+}
+
+/* Show text when active */
+.hidden-text.active {
+  max-height: 200px; /* adjust for longer text */
+  opacity: 1;
+  margin-top: 15px;
 }
 
 /* Responsive adjustments */
@@ -532,10 +552,6 @@ body {
   .about__segment {
     max-width: 45%;
     margin-bottom: 40px;
-  }
-
-  .about__flow::before {
-    top: 60px;
   }
 }
 
@@ -550,18 +566,29 @@ body {
   }
 
   .about__flow::before {
-    display: none; /* remove horizontal line on mobile */
+    display: none;
   }
 }
 
+
 /* ---------- FAQ Section ---------- */
-/* ---------- FAQ Section ---------- */
+
 .faqs {
   position: relative;
   padding: 60px 20px; /* section padding */
-  background: url("images/faqs\ background.jpg") no-repeat center center;
+  background: url("images/faqs-background.jpg") no-repeat center center;
   background-size: cover;
   color: #fff;
+}
+.faqs__container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Overlay for readability */
@@ -577,17 +604,115 @@ body {
   z-index: 0;
 }
 
-/* Content container above overlay */
-.faqs .container {
+/* Container for left + right columns */
+.faqs .faqs__container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
   position: relative;
   z-index: 1;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Left column (title + FAQs) */
+.faqs__left {
+  flex: 1;
+  min-width: 350px;
+}
+
+/* Right column (image) */
+.faqs__right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.faqs__right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
 }
 
 /* Section title */
 .faqs__title {
-  text-align: center;
+  text-align: left; /* align left in new layout */
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+/* FAQ Box */
+.faqs {
+  position: relative;
+  padding: 60px 20px;
+  background: url("images/faqs\ background.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+
+.faqs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Flex container for left + right */
+.faqs__container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* optional: small side padding */
+}
+
+/* Left column */
+.faqs__left {
+  flex: 1.2;
+  min-width: 350px;
+  margin-right: 0px;
+}
+
+/* Right column (image) */
+.faqs__right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 117px;
+  margin-left: 80px;
+}
+
+.faqs__right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.15);
+}
+
+/* Section title */
+.faqs__title {
+  text-align: left;
   font-size: 2.2rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
@@ -603,44 +728,30 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Columns container */
-.faqs__columns {
-  display: flex;
-  gap: 20px; /* space between columns */
-  flex-wrap: wrap; /* wrap on smaller screens */
-}
-
-/* Individual column */
-.faqs__column {
-  flex: 1; /* equal width */
-  min-width: 280px; /* prevent too narrow on small screens */
-}
-
 /* FAQ Entry */
 .faq__entry {
   border-bottom: 1px solid #ddd;
   cursor: pointer;
-  padding: 15px 20px;
+  padding: 20px 25px;
   border-radius: 8px;
   margin-bottom: 10px;
   transition: background-color 0.3s ease;
   background-color: #fff;
 }
 
-/* Hover effect */
 .faq__entry:hover {
   background-color: #f0e6ff;
 }
 
 /* FAQ Question */
 .faq__question {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #111;
   margin: 0;
 }
 
-/* FAQ Answer (hidden by default) */
+/* FAQ Answer */
 .faq__answer {
   max-height: 0;
   overflow: hidden;
@@ -651,22 +762,31 @@ body {
   line-height: 1.6;
 }
 
-/* Active / Expanded FAQ Answer */
 .faq__entry.active .faq__answer {
-  max-height: 500px; /* adjust if answers are longer */
-  padding: 10px 0; /* spacing inside answer */
+  max-height: 500px;
+  padding: 10px 0;
 }
 
-/* ---------- Responsive ---------- */
+/* Responsive */
 @media (max-width: 992px) {
-  .faqs__columns {
-    gap: 15px;
+  .faqs__container {
+    gap: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  .faqs__columns {
-    flex-direction: column; /* single column on mobile */
+  .faqs__container {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .faqs__title {
+    text-align: center;
+  }
+
+  .faqs__right {
+    margin-top: 30px;
+    justify-content: center;
   }
 }
 
