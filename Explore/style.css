@@ -23,10 +23,9 @@ img {
 }
 
 /* ====== Hero Section ====== */
-/* ====== Hero Section ====== */
 #hero {
   height: 80vh;
-  background: url('images/hero\ bg.jpg') center center/cover no-repeat;
+  background: url('images/hero bg.jpg') center center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +58,7 @@ img {
   margin-bottom: 20px;
 }
 
-/* Buttons Container */
+/* ====== Hero Buttons ====== */
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -67,7 +66,6 @@ img {
   flex-wrap: wrap;
 }
 
-/* Hero Buttons */
 #hero button,
 #hero .home-btn {
   padding: 12px 25px;
@@ -107,8 +105,7 @@ img {
   transform: scale(1.05);
 }
 
-/* ====== Sections ====== */
-
+/* ====== General Sections ====== */
 section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -137,6 +134,7 @@ section header p {
   gap: 20px;
 }
 
+/* Individual Card */
 .card {
   background: white;
   border-radius: 10px;
@@ -163,18 +161,32 @@ section header p {
 .card p {
   font-size: 0.95rem;
   color: #555;
+  line-height: 1.4;
 }
 
-/* ====== Clubs Cards Images ====== */
+/* Lists inside cards (for research interests) */
+.card ul {
+  text-align: left;
+  list-style-type: disc;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.card ul li {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ====== Clubs / Special Sections ====== */
 #clubs {
   padding: 60px 20px;
-  background-color: #f1f4f8; /* light neutral background for whole section */
-  border-radius: 10px; /* subtle rounded corners */
-  max-width: 1200px; /* optional width limit */
-  margin: 50px auto; /* center the section */
+  background-color: #f1f4f8; /* light neutral background */
+  border-radius: 10px;
+  max-width: 1162px;
+  margin: 50px auto;
 }
 
-/* Header styling */
 #clubs header h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
@@ -189,7 +201,7 @@ section header p {
   margin-bottom: 40px;
 }
 
-/* Cards Container */
+/* Club Cards */
 #clubs .cards {
   display: flex;
   flex-wrap: wrap;
@@ -197,20 +209,9 @@ section header p {
   justify-content: center;
 }
 
-/* Individual Card */
 #clubs .card {
-  background-color: white; /* card background stays white */
-  border-radius: 10px;
-  padding: 20px;
   width: 280px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-#clubs .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 #clubs .card img {
@@ -221,25 +222,13 @@ section header p {
   margin-bottom: 15px;
 }
 
-#clubs .card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-#clubs .card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.4;
-}
-
 /* ====== Events Section ====== */
 /* ====== Events Section Background ====== */
 #events {
   padding: 60px 20px;
   background-color: #f1f4f8; /* light neutral background for the whole section */
   border-radius: 10px; /* optional subtle rounding for section edges */
-  max-width: 1200px; /* optional width limit */
+  max-width: 1162px; /* optional width limit */
   margin: 50px auto; /* center the section on the page */
 }
 
@@ -343,5 +332,173 @@ footer a:hover {
   .cards {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/*Subject overview*/
+
+/* Section wrapper */
+/* Section wrapper */
+#semester-section {
+  padding: 60px 30px;
+  background: #fdfcf9;            
+  border-top: 2px solid #e7e3da;
+  border-bottom: 2px solid #e7e3da;
+  max-width: 1162px;          
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#semester-section header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+#semester-section h2 {
+  font-size: 2.5rem;       
+  margin-bottom: 10px;
+  color: #222;
+}
+
+
+.year, .semester {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.year:hover, .semester:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.year__title, .semester__title {
+  display: block;
+  cursor: pointer;
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  user-select: none;
+  background: #f9f9ff;
+  border-bottom: 1px solid #ececec;
+  transition: background 0.2s ease;
+}
+
+.year[open] .year__title,
+.semester[open] .semester__title {
+  background: #e8e8ff;          
+}
+
+.semesters {
+  padding: 16px 18px 20px;
+}
+
+.subjects {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.subject {
+  width: 100%;
+  text-align: left;
+  background: #fefefe;
+  border: 1px solid #dcdcdc;
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.subject:hover {
+  background: #f0f4ff;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.subject:active {
+  transform: translateY(1px);
+}
+
+
+.description-box {
+  margin-top: 28px;
+  padding: 20px 24px;
+  background: #fffaf0;
+  border: 1px solid #f4d4a1;
+  border-radius: 12px;
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.description-box strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.description-box em {
+  color: #666;
+}
+
+ 
+/* Subjects Card Grid */
+.subjects-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Individual Subject Card */
+.subject-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+  text-align: center;
+  font-weight: 500;
+}
+
+.subject-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* Hover effect for better visualization */
+.subject-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  background: #f0f4ff;
+}
+
+/* Active/click effect */
+.subject-card:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Optional: Make the cards slightly larger on wide screens */
+@media (min-width: 768px) {
+  .subjects-card-grid {
+    gap: 20px;
+  }
+  .subject-card h3 {
+    font-size: 1.05rem;
   }
 }
