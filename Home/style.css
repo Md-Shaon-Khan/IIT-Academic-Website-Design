@@ -1,3 +1,16 @@
+/*Smooth Fade (Gradient Overlay)*/
+.divider {
+  width: 100%;
+  line-height: 0;
+}
+
+.divider svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+
 /* ===============================
    Global Styles
    =============================== */
@@ -236,7 +249,7 @@ body {
   display: flex;
   justify-content: center; /* center horizontally */
   position: absolute; /* allow bottom positioning */
-  bottom: 25px; /* 10–15px from bottom */
+  bottom: 45px; /* 10–15px from bottom */
   width: 100%; /* full width to center flex */
 }
 
@@ -546,7 +559,7 @@ body {
 .faqs {
   position: relative;
   padding: 60px 20px; /* section padding */
-  background: url("images/faqs\ back.jpg") no-repeat center center;
+  background: url("images/faqs\ background.jpg") no-repeat center center;
   background-size: cover;
   color: #fff;
 }
@@ -685,6 +698,10 @@ body {
 .iit-footer__column {
   flex: 1;
   min-width: 220px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  
 }
 
 /* Logo */
@@ -703,11 +720,12 @@ body {
 
 /* Column headings */
 .iit-footer__heading {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 15px;
   color: #fff;
+  text-align: center;
 }
 
 /* Links inside columns */
