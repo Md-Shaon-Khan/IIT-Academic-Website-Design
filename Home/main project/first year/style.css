@@ -86,3 +86,68 @@ body{
   margin-right: 1rem;
 }
 
+/* ===== Infinite sliding row (marquee) ===== */
+.scroll-row {
+  --gap: 16px;                 /* space between cards */
+  --speed-px-per-sec: 100;     /* easy speed control: pixels per second */
+  --duration: 30s;             /* will be overridden by JS based on width */
+  --travel: 0px;               /* how far one cycle travels (computed) */
+
+  position: relative;
+  overflow: hidden;            /* hide the flowing track */
+  width: 100%;
+  padding-bottom: 10px;        /* keep your spacing below */
+
+  /* nice edge fade (works in webkit + modern browsers) */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
+          mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
+}
+
+/* the moving belt */
+.scroll-row .marquee-track {
+  display: inline-flex;        /* width shrinks to content; no wrapping */
+  gap: var(--gap);
+  will-change: transform;
+  animation: marquee var(--duration) linear infinite;
+}
+
+/* pause on hover (so users can click/read) and when focused inside */
+.scroll-row:hover .marquee-track,
+.scroll-row:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* one full loop translates exactly one set width (JS sets --travel) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--travel))); }
+}
+
+/* keep cards consistent; you already had 500px, keep it for stable motion */
+.scroll-row .project-card {
+  flex: 0 0 auto;   /* never wrap/shrink */
+  width: 500px;
+}
+
+/* smaller screens: make cards responsive but stable */
+@media (max-width: 768px) {
+  .scroll-row .project-card {
+    width: 80vw;    /* keep consistent width on mobile */
+  }
+}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-row .marquee-track {
+    animation: none;
+  }
+  .scroll-row {
+    overflow-x: auto;                 /* fallback: manual scroll */
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+}
+
+/* (optional) prettier scrollbar if reduced-motion fallback kicks in */
+.scroll-row::-webkit-scrollbar { height: 8px; }
+.scroll-row::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }

@@ -76,41 +76,8 @@
         .then((html) => (document.getElementById('footer').innerHTML = html));
     </script>
     
-    <script>
-        function loadBatchProjects(batchFile, containerId) {
-          fetch(batchFile)
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, "text/html");
-              
-              // Grab only the project cards from the batch page
-              const cards = doc.querySelectorAll(".project-card");
-              const container = document.getElementById(containerId);
+    <script src="script.js"></script>
 
-              cards.forEach(card => {
-                fixImagePaths(card, batchFile);
-                container.appendChild(card.cloneNode(true));
-              });
-            })
-            .catch(err => console.error("Error loading batch:", err));
-        }
-
-        function fixImagePaths(card, batchFile) {
-      const basePath = batchFile.substring(0, batchFile.lastIndexOf("/") + 1);
-      card.querySelectorAll("img").forEach(img => {
-        const oldSrc = img.getAttribute("src");
-        if (oldSrc && !oldSrc.startsWith("http")) {
-          img.src = basePath + oldSrc;
-        }
-      });
-    }
-
-      // Load batches
-      loadBatchProjects("Batch-52/index.html", "batch-52-projects");
-      loadBatchProjects("Batch-51/index.html", "batch-51-projects");
-      loadBatchProjects("Batch-50/index.html", "batch-50-projects");
-      </script>
 
     <!-- Bootstrap JavaScript -->
     <script
