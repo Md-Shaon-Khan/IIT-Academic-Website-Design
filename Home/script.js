@@ -1,21 +1,39 @@
-const faqEntries = document.querySelectorAll('.faq__entry');
+document.querySelectorAll(".faq__entry").forEach((faq) => {
+    faq.addEventListener("click", () => {
+      // Close other open FAQs (optional: remove if you want multiple open)
+      document.querySelectorAll(".faq__entry").forEach((item) => {
+        if (item !== faq) {
+          item.classList.remove("active");
+          item.querySelector(".faq__answer").style.maxHeight = null;
+        }
+      });
 
-faqEntries.forEach(entry => {
-  const question = entry.querySelector('.faq__question');
+      // Toggle current FAQ
+      faq.classList.toggle("active");
+      const answer = faq.querySelector(".faq__answer");
 
-  question.addEventListener('click', () => {
-    // Toggle active class on clicked entry
-    entry.classList.toggle('active');
-
-    // Optional: close others
-    faqEntries.forEach(other => {
-      if (other !== entry) {
-        other.classList.remove('active');
+      if (faq.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px"; // fit to content
+      } else {
+        answer.style.maxHeight = null;
       }
     });
   });
-});
+ document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
 
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   const icons = document.querySelectorAll(".about__icon");

@@ -17,8 +17,8 @@
 :root {
   --color-bg-dark: #0a0f1c;
   --color-text-light: #f5f5f5;
-  --color-accent: #3fa9f5;
-  --color-accent-alt: #2ecc71;
+  --color-accent: #11446c;
+  --color-accent-alt: #0a0a0a;
   --font-main: "Inter", Arial, sans-serif;
 }
 
@@ -34,11 +34,26 @@ body {
 }
 
 body {
-  font-family: var(--font-main);
+  font-family:'Times New Roman', Times, serif;
   line-height: 1.6;
   color: var(--color-text-light);
-  background: linear-gradient(135deg, #e6eef7, #cdd6e8, #8fa1c7);
+  background: linear-gradient(135deg, #8fadd0, #f3f4f7);
 }
+
+  /* ===== Smooth Scroll Animation for Sections ===== */
+/* ===== Smooth Scroll Animation for Sections ===== */
+section {
+  opacity: 0;
+  transform: translateY(60px); /* slightly more slide */
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* When section is visible */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ===============================
    Skip Link (Accessibility)
@@ -48,7 +63,7 @@ body {
   top: -40px;
   left: 0;
   background: var(--color-accent);
-  color: #fff;
+  color: #eff6fb;
   padding: 0.5rem 1rem;
   z-index: 100;
   transition: top 0.3s ease;
@@ -74,16 +89,17 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(10, 15, 28, 0.6); /* semi-transparent */
+  background: rgba(255, 255, 255); /* semi-transparent */
   z-index: 999;
   backdrop-filter: blur(6px);
+  color: black;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between; /* logo left, links right */
-  padding: 1rem 2%; /* small padding for top/bottom, minimal for left/right */
+  padding: 1rem 1%; /* small padding for top/bottom, minimal for left/right */
   position: relative;
 }
 .navbar.container {
@@ -92,7 +108,7 @@ body {
 }
 
 .brand {
-  margin-left: 20px;
+  margin-left: 10px;
   display: flex;
   align-items: center; /* flush left */
   text-decoration: none;
@@ -102,14 +118,14 @@ body {
   position: relative; /* required for absolute submenu */
 }
 .brand img {
-  height: 90px; /* larger logo */
+  height: 70px; /* larger logo */
   width: auto;
   display: block;
 }
 .brand-text {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #fff; /* JU’s dark blue shade */
+  color: #060606; /* JU’s dark blue shade */
   white-space: nowrap; /* prevent wrapping */
 }
 .nav-menu {
@@ -120,9 +136,10 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
   font-weight: 600;
   transition: color 0.3s;
+  font-size: 18px;
 }
 .nav-link:hover {
   color: var(--color-accent);
@@ -132,7 +149,7 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(10, 15, 28, 0.95);
+  background: rgba(246, 246, 246, 0.95);
   list-style: none;
   padding: 0.5rem 0;
   margin: 0;
@@ -149,7 +166,7 @@ body {
 .dropdown-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
   text-decoration: none;
   transition: background 0.3s;
   white-space: nowrap;
@@ -174,7 +191,7 @@ body {
   top: 0;
   left: auto; /* position to the right of parent */
   right: 100%;
-  background: rgba(10, 15, 28, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   list-style: none;
   padding: 0.5rem 0;
   margin: 0;
@@ -207,7 +224,7 @@ body {
   display: block;
   width: 25px;
   height: 3px;
-  background: var(--color-text-light);
+  background: var(--color-text-dark);
 }
 
 /* ===============================
@@ -300,6 +317,19 @@ body {
   flex-wrap: wrap;
   margin-top: 1rem;
 }
+.view{
+   padding: 5px 20px;
+   border:  2px solid #11446c;
+   text-decoration: none;
+   height: 50px;
+   text-align: center;
+   color: white;
+   font-size: 18px;
+  }
+  .view:hover{
+    background-color: white;
+    color: #11446c;
+  }
 .btn {
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
@@ -314,11 +344,11 @@ body {
 .btn-primary:hover {
   background: #1d85c6;
 }
-.btn-outline {
+.btn {
   border: 2px solid var(--color-accent-alt);
   color: var(--color-accent-alt);
 }
-.btn-outline:hover {
+.btn :hover {
   background: var(--color-accent-alt);
   color: #fff;
 }
@@ -378,7 +408,7 @@ body {
   display: flex;
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
-  color: #fff; /* White text for contrast */
+  color: #000000; /* White text for contrast */
   overflow: hidden; /* Hide any video overflow */
 }
 
@@ -418,15 +448,15 @@ body {
 /* Button styling */
 .btn.btn-outline {
   padding: 0.75rem 1.5rem;
-  border: 2px solid #fff;
+  border: 1px solid #11446c;
   border-radius: 6px;
   text-decoration: none;
-  color: #fff;
+  color: #030303;
   transition: 0.3s;
 }
 .btn.btn-outline:hover {
   background: #fff;
-  color: #000;
+  color: #11446c;
 }
 
 /* ---------- About Section ---------- */
@@ -436,6 +466,7 @@ body {
   background-size: cover;
   position: relative;
   color: #fff;
+  background-color: black;
 }
 
 .about::before {
@@ -576,8 +607,7 @@ body {
 .faqs {
   position: relative;
   padding: 60px 20px; /* section padding */
-  background: url("images/faqs-background.jpg") no-repeat center center;
-  background-size: cover;
+  
   color: #fff;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -601,7 +631,7 @@ body {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  background: linear-gradient(135deg, #8fadd0, #cdd6e8, #8fa1c7);
   z-index: 0;
 }
 
@@ -647,7 +677,7 @@ body {
   font-size: 2.2rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
-  color: #fff;
+  color: #030303;
   margin-bottom: 40px;
 }
 
@@ -655,7 +685,6 @@ body {
 .faqs {
   position: relative;
   padding: 60px 20px;
-  background: url("images/faqs\ background.jpg") no-repeat center center;
   background-size: cover;
   color: #fff;
 }
@@ -717,7 +746,7 @@ body {
   font-size: 2.2rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
-  color: #fff;
+  color: #252323;
   margin-bottom: 40px;
 }
 
@@ -741,7 +770,7 @@ body {
 }
 
 .faq__entry:hover {
-  background-color: #d9eaf4;
+  background-color: #dde9f2;
 }
 
 /* FAQ Question */
@@ -756,12 +785,10 @@ body {
 .faq__answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  padding: 0 0;
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
+  transition: max-height 0.2s ease;
+  color: black;
 }
+
 
 .faq__entry.active .faq__answer {
   max-height: 500px;
@@ -793,7 +820,7 @@ body {
 
 /* ---------- Footer Section ---------- */
 .iit-footer {
-  background-color: #111; /* dark background */
+  background-color:#000000; /* dark background */
   color: #fff;
   padding: 60px 20px 40px; /* top, sides, bottom */
   font-family: "Roboto", sans-serif;
@@ -841,8 +868,8 @@ body {
 
 /* Column headings */
 .iit-footer__heading {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 15px;
+  
   text-transform: uppercase;
   margin-bottom: 15px;
   color: #fff;
@@ -868,7 +895,7 @@ body {
 }
 
 .iit-footer__links li a:hover {
-  color: #7c4dff; /* highlight on hover */
+  color: #11446c; /* highlight on hover */
 }
 
 /* Social media icons row */
@@ -899,7 +926,7 @@ body {
 }
 
 .iit-footer__social .social-icon:hover {
-  background-color: #c4e2f3 /* hover effect */
+  background-color: #11446c /* hover effect */
 }
 
 /* ---------- Responsive ---------- */
