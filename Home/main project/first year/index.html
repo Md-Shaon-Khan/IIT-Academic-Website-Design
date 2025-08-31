@@ -89,6 +89,7 @@
               const container = document.getElementById(containerId);
 
               cards.forEach(card => {
+                fixImagePaths(card, batchFile);
                 container.appendChild(card.cloneNode(true));
               });
             })
