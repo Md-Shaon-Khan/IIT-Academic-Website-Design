@@ -34,7 +34,7 @@ body {
 }
 .navbar.container {
   padding-left: 0; /* remove default left padding */
-  padding-right: 2%; /* optional: right padding ঠিক রাখুন */
+  padding-right: 2%; /* optional: right padding*/
 }
 
 .brand {
