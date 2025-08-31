@@ -66,7 +66,6 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-    <script src="script.js"></script>
     <script>
       fetch('../navbar.html')
         .then((response) => response.text())
@@ -75,13 +74,12 @@
         .then((response) => response.text())
         .then((html) => (document.getElementById('footer').innerHTML = html));
     </script>
-    
-    <script src="script.js"></script>
 
 
     <!-- Bootstrap JavaScript -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>

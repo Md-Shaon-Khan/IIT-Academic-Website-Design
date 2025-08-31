@@ -72,7 +72,19 @@
   }
 
   // -------- main loader --------
-  function loadBatchProjects(batchFile, containerId) {
+  document.addEventListener("DOMContentLoaded", () => {
+      const batchList = [
+        { file: "Batch-52/index.html", container: "batch-52-projects", dir: 1 },
+        { file: "Batch-51/index.html", container: "batch-51-projects", dir: -1 },
+        { file: "Batch-50/index.html", container: "batch-50-projects", dir: 1 },
+      ];
+
+    batchList.forEach(b => {
+      loadBatchProjects(b.file, b.container, b.dir);
+    });
+
+  });
+  function loadBatchProjects(batchFile, containerId, direction = 1) {
     fetch(batchFile)
       .then(res => res.text())
       .then(html => {
@@ -106,6 +118,7 @@
         // compute sizes after images are (mostly) ready
         waitForImages(track).then(() => {
           setupMarquee(container, track, firstSetCount);
+          container.style.setProperty("--direction", direction); // <-- set direction
         });
 
         // recompute on resize (layout or responsive card width changes)
@@ -116,7 +129,12 @@
       .catch(err => console.error("Error loading batch:", err));
   }
 
-  // Load batches
-  loadBatchProjects("Batch-52/index.html", "batch-52-projects");
-  loadBatchProjects("Batch-51/index.html", "batch-51-projects");
-  loadBatchProjects("Batch-50/index.html", "batch-50-projects");
+  window.addEventListener("pageshow", () => {
+    document.querySelectorAll(".scroll-row .marquee-track").forEach(track => {
+      const container = track.parentElement;
+      const firstSetCount = track.children.length / 2;
+      setupMarquee(container, track, firstSetCount);
+    });
+  });
+
+  

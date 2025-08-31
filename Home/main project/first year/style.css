@@ -92,7 +92,7 @@ body{
   --speed-px-per-sec: 100;     /* easy speed control: pixels per second */
   --duration: 30s;             /* will be overridden by JS based on width */
   --travel: 0px;               /* how far one cycle travels (computed) */
-
+  --direction: 1;              /* 1: left to right, -1: right to left */
   position: relative;
   overflow: hidden;            /* hide the flowing track */
   width: 100%;
@@ -111,16 +111,16 @@ body{
   animation: marquee var(--duration) linear infinite;
 }
 
+/* one full loop translates exactly one set width (JS sets --travel) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--travel)* var(--direction))); }
+}
+
 /* pause on hover (so users can click/read) and when focused inside */
 .scroll-row:hover .marquee-track,
 .scroll-row:focus-within .marquee-track {
   animation-play-state: paused;
-}
-
-/* one full loop translates exactly one set width (JS sets --travel) */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(-1 * var(--travel))); }
 }
 
 /* keep cards consistent; you already had 500px, keep it for stable motion */
