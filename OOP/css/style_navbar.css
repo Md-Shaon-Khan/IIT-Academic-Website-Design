@@ -1,3 +1,6 @@
+body {
+  padding-top: 90px; /* adjust based on navbar height */
+}
 
 :root {
   --color-text-dark: #fff;  /* or any dark color you prefer */
@@ -8,7 +11,7 @@
    Header & Navigation
    =============================== */
 .site-header {
-  
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

@@ -344,7 +344,7 @@
 
 
 
-  <div class="container py-5">
+  <div class="container py-5" >
 
     <!-- Intro Section -->
     <div class="intro mb-5 text-center">
@@ -473,5 +473,18 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+
+    // Accessibility
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", !expanded);
+  });
+</script>
+
 </body>
 </html>
