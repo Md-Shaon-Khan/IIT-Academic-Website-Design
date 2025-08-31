@@ -46,11 +46,16 @@ function measureFirstSetWidth(track, count) {
 }
 
 // Set CSS variables for animation
-function setupMarquee(containerEl, trackEl, firstSetCount) {
+function setupMarquee(containerEl, trackEl, firstSetCount, direction = 1) {
   const travel = measureFirstSetWidth(trackEl, firstSetCount);
-  containerEl.style.setProperty("--travel", travel + "px");
 
-  const speed = parseFloat(getComputedStyle(containerEl).getPropertyValue("--speed-px-per-sec")) || 100;
+  containerEl.style.setProperty("--travel", travel + "px");
+  containerEl.style.setProperty("--direction", direction);
+
+  const speed = parseFloat(
+    getComputedStyle(containerEl).getPropertyValue("--speed-px-per-sec")
+  ) || 100;
+
   const duration = travel > 0 ? (travel / speed) : 30;
   containerEl.style.setProperty("--duration", duration + "s");
 }
@@ -61,7 +66,7 @@ function duplicateFirstSet(trackEl, firstSetCount) {
   originals.forEach(node => {
     const clone = node.cloneNode(true);
     stripIds(clone);
-    trackEl.appendChild(clone);
+    trackEl.appendChild(clone); // ✅ always append, even for reverse
   });
 }
 
@@ -96,6 +101,7 @@ function loadBatchProjects(batchFile, containerId, direction = 1) {
       if (!container) return;
 
       container.innerHTML = "";
+      container.dataset.direction = direction; // ✅ mark direction
       const track = document.createElement("div");
       track.className = "marquee-track";
       container.appendChild(track);
@@ -114,12 +120,14 @@ function loadBatchProjects(batchFile, containerId, direction = 1) {
         // Duplicate first set for infinite scroll
         duplicateFirstSet(track, firstSetCount);
 
-        // Set direction and setup animation
-        container.style.setProperty("--direction", direction);
-        setupMarquee(container, track, firstSetCount);
+        // Set direction + setup animation
+        setupMarquee(container, track, firstSetCount, direction);
 
         // Recalculate on window resize
-        const recalc = debounce(() => setupMarquee(container, track, firstSetCount), 200);
+        const recalc = debounce(
+          () => setupMarquee(container, track, firstSetCount, direction),
+          200
+        );
         window.addEventListener("resize", recalc);
       });
     })
@@ -131,6 +139,7 @@ window.addEventListener("pageshow", () => {
   document.querySelectorAll(".scroll-row .marquee-track").forEach(track => {
     const container = track.parentElement;
     const firstSetCount = track.children.length / 2;
-    waitForImages(track).then(() => setupMarquee(container, track, firstSetCount));
+    const direction = parseInt(container.dataset.direction || "1", 10);
+    waitForImages(track).then(() => setupMarquee(container, track, firstSetCount, direction));
   });
 });

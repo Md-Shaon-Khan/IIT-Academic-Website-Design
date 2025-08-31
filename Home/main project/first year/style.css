@@ -64,90 +64,65 @@ body{
 
 /* scroll-row */
 .scroll-row {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scrollbar-width: thin;        /*Firefox */
-}
-
-.scroll-row::-webkit-scrollbar {
-  height: 8px;
-}
-
-.scroll-row::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 4px;
-}
-
-.scroll-row .project-card {
-  flex: 0 0 auto;
-  width: 500px;   /* match the column size used on batch page */
-  margin-right: 1rem;
-}
-
-/* ===== Infinite sliding row (marquee) ===== */
-.scroll-row {
-  --gap: 16px;                 /* space between cards */
-  --speed-px-per-sec: 100;     /* easy speed control: pixels per second */
-  --duration: 30s;             /* will be overridden by JS based on width */
-  --travel: 0px;               /* how far one cycle travels (computed) */
-  --direction: 1;              /* 1: left to right, -1: right to left */
+  --gap: 16px;
+  --speed-px-per-sec: 100;
+  --duration: 30s;
+  --travel: 0px;
+  --direction: 1;
   position: relative;
-  overflow: hidden;            /* hide the flowing track */
+  overflow: hidden;
   width: 100%;
-  padding-bottom: 10px;        /* keep your spacing below */
+  padding-bottom: 10px;
 
-  /* nice edge fade (works in webkit + modern browsers) */
   -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
           mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
 }
 
-/* the moving belt */
 .scroll-row .marquee-track {
-  display: inline-flex;        /* width shrinks to content; no wrapping */
+  display: inline-flex;
   gap: var(--gap);
   will-change: transform;
-  animation: marquee var(--duration) linear infinite;
+  animation: scroll-left var(--duration) linear infinite;
 }
 
-/* one full loop translates exactly one set width (JS sets --travel) */
-@keyframes marquee {
+/* override for reverse direction */
+.scroll-row[data-direction="-1"] .marquee-track {
+  animation-name: scroll-right;
+}
+
+@keyframes scroll-left {
   from { transform: translateX(0); }
-  to   { transform: translateX(calc(-1 * var(--travel)* var(--direction))); }
+  to   { transform: translateX(calc(-1 * var(--travel))); }
 }
 
-/* pause on hover (so users can click/read) and when focused inside */
+@keyframes scroll-right {
+  from { transform: translateX(calc(-1 * var(--travel))); }
+  to   { transform: translateX(0); }
+}
+
 .scroll-row:hover .marquee-track,
 .scroll-row:focus-within .marquee-track {
   animation-play-state: paused;
 }
 
-/* keep cards consistent; you already had 500px, keep it for stable motion */
 .scroll-row .project-card {
-  flex: 0 0 auto;   /* never wrap/shrink */
+  flex: 0 0 auto;
   width: 500px;
 }
 
-/* smaller screens: make cards responsive but stable */
 @media (max-width: 768px) {
   .scroll-row .project-card {
-    width: 80vw;    /* keep consistent width on mobile */
+    width: 80vw;
   }
 }
 
-/* accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .scroll-row .marquee-track {
     animation: none;
   }
   .scroll-row {
-    overflow-x: auto;                 /* fallback: manual scroll */
+    overflow-x: auto;
     -webkit-mask-image: none;
             mask-image: none;
   }
 }
-
-/* (optional) prettier scrollbar if reduced-motion fallback kicks in */
-.scroll-row::-webkit-scrollbar { height: 8px; }
-.scroll-row::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
