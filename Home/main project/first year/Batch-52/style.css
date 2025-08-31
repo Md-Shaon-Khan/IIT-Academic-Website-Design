@@ -5,13 +5,19 @@ body{
   background-attachment: fixed;
   background-position: center;
 }
+.horizontal-line {
+  height: 6px; /* Increased thickness */
+  background-color: #091384;
+  margin: 20px 0;
+}
+
 .section-title{
-  text-shadow: rgb(0, 0, 1) 1px 1px 2px;
-  color: #6f2386;
+  text-shadow: rgb(26, 85, 121) 1px 1px 2px;
+  color: #166370;
 }
  .section-title a{
-  text-shadow: black 1px 1px 2px;
-  color: #000203;
+  text-shadow: rgb(27, 8, 83) 1px 1px 2px;
+  color: #1f1990;
 }
 
 .left-line {
