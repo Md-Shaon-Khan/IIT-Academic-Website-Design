@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>IIT Academic Portal – Jahangirnagar University</title>
-    <meta
-      name="description"
-      content="Landing page for the academic section of the Institute of Information Technology (IIT), Jahangirnagar University."
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System - Project Showcase</title>
 
-    <!-- Fonts (loaded here; styling will be added in CSS step) -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Global stylesheet (you will provide in the next step) -->
-    <link rel="stylesheet" href="style.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <!-- Defer script reference for later JS step -->
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="script.js" />
-  </head>
-  <body>
-    <!-- Skip link for accessibility -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <!-- Page wrapper to help layer hero background and overlays -->
-    <div class="page">
-      <!-- Header / Transparent top navigation over hero background -->
-      <header class="site-header" id="site-header" aria-label="Top Navigation">
+  <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style_navbar.css">
+  <link rel="stylesheet" href="css/style_projectdescription.css">
+  <link rel="stylesheet" href="css/style_question.css">
+</head>
+<body>
+<header class="site-header" id="site-header" aria-label="Top Navigation">
         <nav class="navbar container-fluid" aria-label="Primary">
           <!-- Left: JU logo linking to university homepage -->
           <a
@@ -46,7 +26,7 @@
             aria-label="Jahangirnagar University (opens in new tab)"
           >
             <img
-              src="images/JU logo.png"
+              src="images/ju logo white.png "
               alt="Jahangirnagar University"
               id="juLogo"
             />
@@ -127,7 +107,7 @@
                   </ul>
                 </li>
                 <li class="dropdown-subitem">
-                  <a href="main project/first year/index.html" class="dropdown-link">Project</a>
+                  <a href="#" class="dropdown-link">Project</a>
                 </li>
               </ul>
             </li>
@@ -361,261 +341,90 @@
           </ul>
         </nav>
       </header>
+<div class="container my-5">
 
-      <!-- Hero section with Earth-at-night background -->
-      <main id="main-content" class="main" tabindex="-1">
-        <section
-          class="hero"
-          aria-label="Welcome section"
-          style="background-image: url('images/Background.jpg')"
-        >
-          <!-- Optional dark overlay handled in CSS -->
-          <div class="hero__overlay" aria-hidden="true"></div>
+  <!-- Title -->
+  <h1 class="text-center mb-3">Library Management System</h1>
+  <p class="text-center text-secondary fst-italic mb-4">
+    A Java-based solution to manage library operations efficiently
+  </p>
 
-          <div class="hero__content container">
-            <h1 class="hero__title">Welcome</h1>
-            <p class="hero__subtitle">IIT Academic Website</p>
+  <!-- GitHub Button -->
+  <div class="text-center mb-5">
+    <a href="https://github.com/harismuneer/Library-Management-System-JAVA" class="btn btn-github">
+      <i class="bi bi-github"></i> View on GitHub
+    </a>
+  </div>
 
-            <div class="hero__actions">
-              <a
-                class="btn "
-                href="https://iitju.edu.bd/"
-                target="_blank"
-                rel="noopener"
-                style="background-color:#11446c; color: white; font-size: 20px;"
-              
-                >Main Website</a
-              >
-              <a
-                class="view"
-                href="../View Academic Calendar/index.html"
-                
-                >View Academic Calendar</a
-              >
-              
-            </div>
+  <!-- Project Card -->
+  <div class="card card-custom mb-5">
+    <div class="row g-0">
+      
+      <!-- Description Column -->
+      <div class="col-md-7 p-4">
+        <h5 class="fw-bold">Problem Statement</h5>
+        <p>Managing books manually in a traditional library is time-consuming and messy. Students waste time searching for books, and librarians struggle to track issued or returned books. This system solves this problem.</p>
 
-            <!-- Add Explore button here -->
-          </div>
-        </section>
+        <h5 class="fw-bold">Introduction</h5>
+        <p>The system provides a digital platform where librarians can add, update, or delete books, and students can search for books easily.</p>
 
-        <!-- <div class="hero__explore">
-          <a href="../Explore/index.html">
-            <button class="btn btn-outline" aria-label="Explore">
-              Explore
-            </button>
-          </a>
-        </div> -->
+        <h5 class="fw-bold">Features</h5>
+        <ul>
+          <li>Add, update, delete, search books</li>
+          <li>Student & librarian login system</li>
+          <li>Issue & return books with due-date tracking</li>
+          <li>Reduces duplicate entries and human errors</li>
+        </ul>
 
-        <!--               divider               -->
-        <!-- <div class="divider">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-  </svg>
-</div> -->
-        <!-- Optional anchors for year links; content can be added later -->
-        <section
-          id="year1"
-          class="anchor-spacer"
-          aria-label="First Year anchor"
-        ></section>
-        <section
-          id="year2"
-          class="anchor-spacer"
-          aria-label="Second Year anchor"
-        ></section>
-        <section
-          id="year3"
-          class="anchor-spacer"
-          aria-label="Third Year anchor"
-        ></section>
-        <section
-          id="year4"
-          class="anchor-spacer"
-          aria-label="Fourth Year anchor"
-        ></section>
+        <h5 class="fw-bold">Tools & Technology</h5>
+        <ul>
+          <li>Frontend: Java Swing</li>
+          <li>Backend: Core Java (OOP)</li>
+          <li>Database: MySQL</li>
+        </ul>
 
-        <div class="divider">
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-          </svg> -->
-        </div>
-        <!-- Discover Section -->
-        <section class="discover">
-          <!-- Content container for text and button -->
-          <div class="discover__content container">
-            <!-- Section Title -->
-            <h2 class="discover__title">
-              Explore <br />
-              The World of Innovation at IIT
-            </h2>
+        <h5 class="fw-bold mt-4">Impact</h5>
+        <p>This project helps librarians save time, reduces errors, and provides students with a more efficient way to access library resources.</p>
 
-            <!-- Description Text -->
-            <p class="discover__text">
-              At IIT, we foster cutting-edge research, advanced technology, and
-              interdisciplinary learning to empower students and shape the
-              leaders of tomorrow.
-            </p>
-
-            <!-- Button linking to official JU website -->
-            <a href="../Explore/index.html" class="btn btn-outline">
-              Discover Our Programs
-            </a>
-          </div>
-
-          <!-- Background video section -->
-          <!-- This video will autoplay, stay muted, and loop infinitely -->
-          <!-- playsinline ensures it works on mobile devices without fullscreen -->
-          <!-- <video class="discover__video" autoplay muted loop playsinline>
-            Video source file inside assets/videos folder -->
-            <!-- <source src="Video/discover background.mp4" type="video/mp4" />
-
-             Fallback text if browser does not support video -->
-            <!-- Your browser does not support the video tag.
-          </video> --> 
-        </section>
-
-        <div class="divider">
-         
-        </div>
-
-        <!--About Section-->
-        <!-- About Section -->
-        <section class="about" >
-          <div class="about__container">
-            <!-- Section Title -->
-            <h2 class="about__title">About</h2>
-
-            <!-- Horizontal Flow -->
-            <div class="about__flow">
-              <!-- Segment 1: Purpose -->
-              <div class="about__segment">
-                <button class="about__icon-btn" data-text="purpose">
-                  <i class="fa fa-archive"></i>
-                </button>
-                <h3 class="about__label">Purpose</h3>
-                <p class="about__text hidden-text" id="text-purpose">
-                  To provide IIT students with a centralized, structured archive
-                  of academic questions and projects.
-                </p>
-              </div>
-
-              <!-- Segment 2: Feature -->
-              <div class="about__segment">
-                <button class="about__icon-btn" data-text="feature">
-                  <i class="fa fa-folder-open"></i>
-                </button>
-                <h3 class="about__label">Feature</h3>
-                <p class="about__text hidden-text" id="text-feature">
-                  Question bank by course and section Project repository with
-                  documentation Smart categorization for quick access.
-                </p>
-              </div>
-
-              <!-- Segment 3: Mission -->
-              <div class="about__segment">
-                <button class="about__icon-btn" data-text="mission">
-                  <i class="fa-solid fa-bullseye"></i>
-                </button>
-                <h3 class="about__label">Mission</h3>
-                <p class="about__text hidden-text" id="text-mission">
-                  To preserve academic resources, foster collaboration, and
-                  inspire continuous innovation within IIT.
-                </p>
-              </div>
+        <h5 class="fw-bold mt-4">Team Members</h5>
+        <div class="d-flex flex-wrap gap-3 mt-2">
+          <div class="team-member">
+            <img src="https://i.pravatar.cc/50?img=12" alt="Raunaq">
+            <div>
+              <strong>Raunaq Jahan</strong><br>
+              <small>raunaq@gmail.com</small>
             </div>
           </div>
-        </section>
-
-        <div class="divider">
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-          </svg> -->
-        </div>
-        <!--FAQS-->
-        <!--FAQS-->
-        <section class="faqs">
-          <div class="faqs__container">
-            <!-- Left Column: Title + FAQs -->
-            <div class="faqs__left">
-              <h2 class="faqs__title">Frequently Asked Questions</h2>
-
-              <div class="faqs__box">
-                <div class="faq__entry">
-                  <h3 class="faq__question">What is IIT Academic Website</h3>
-                  <div class="faq__answer">
-                    <p>
-                      The IIT Academic Website is a centralized platform for
-                      academic resources.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="faq__entry">
-                  <h3 class="faq__question">Who can upload the question</h3>
-                  <div class="faq__answer">
-                    <p>Only authorized faculty can upload questions.</p>
-                  </div>
-                </div>
-
-                <div class="faq__entry">
-                  <h3 class="faq__question">
-                    Who can upload the Project and Thesis Paper
-                  </h3>
-                  <div class="faq__answer">
-                    <p>
-                      Students can upload projects and thesis papers after
-                      approval.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="faq__entry">
-                  <h3 class="faq__question">How to access past questions</h3>
-                  <div class="faq__answer">
-                    <p>
-                      Past questions are available by course and semester in the
-                      archive.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column: Image -->
-            <div class="faqs__right">
-              <img src="images/computer lab.jpg" alt="FAQ Image" />
+          <div class="team-member">
+            <img src="https://i.pravatar.cc/50?img=32" alt="Humayra">
+            <div>
+              <strong>Humayra</strong><br>
+              <small>humay@gmail.com</small>
             </div>
           </div>
-        </section>
-
-        <div class="divider">
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-          </svg> -->
         </div>
-      </main>
+      </div>
 
-      <footer class="iit-footer">
+      <!-- Image Column -->
+      <div class="col-md-5 p-4 d-flex flex-column align-items-center justify-content-center">
+        <img src="images/libary manenagement ui.png" class="img-fluid project-image mb-3" alt="Library System UI">
+        <p class="text-center mb-3">Library System UI</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+    <footer class="iit-footer">
         <div class="container">
           <div class="iit-footer__columns">
             <!-- Column 1: Institutional Identity -->
             <div class="iit-footer__column">
               <div class="iit-footer__logo">
                 <img
-                  src="images/iit duplicate logo.jpg"
+                  src="../Home/images/iit duplicate logo.jpg"
                   alt="IIT Jahangirnagar University Logo"
                 />
               </div>
@@ -665,25 +474,21 @@
             <a
               href="https://www.facebook.com/groups/138289376248644"
               class="social-icon"
-              ><i class="fa fa-facebook" aria-hidden="true"></i
+              ><i class="bi bi-facebook" aria-hidden="true"></i
             ></a>
             <a href="#" class="social-icon"
-              ><i class="fa fa-twitter" aria-hidden="true"></i
+              ><i class="bi bi-twitter" aria-hidden="true"></i
             ></a>
             <a
               href="https://www.linkedin.com/groups/14273407/"
               class="social-icon"
-              ><i class="fa fa-linkedin" aria-hidden="true"></i
+              ><i class="bi bi-linkedin" aria-hidden="true"></i
             ></a>
           </div>
         </div>
       </footer>
-    </div>
 
-    <!-- No-JS fallback note (visually hidden in CSS, available for screen readers) -->
-    <div class="sr-only" aria-live="polite">
-      JavaScript is not required to use the Explore panel. Navigation remains
-      accessible.
-    </div>
-  </body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

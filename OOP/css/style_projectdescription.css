@@ -1,0 +1,69 @@
+body {
+  background: linear-gradient(135deg, #e6f0f7, #f4f7f9);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  
+
+}
+
+h1, h5 {
+  color: #325467;
+}
+
+/* Custom Card */
+.card-custom {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Team Members */
+.team-member {
+  background: #eef4f7;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-3px);
+}
+
+.team-member img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* Project Image */
+.project-image {
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+}
+
+/* GitHub Button */
+.btn-github {
+  background-color: #325467;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-github:hover {
+  background-color: #214054;
+  color: #fff;
+}

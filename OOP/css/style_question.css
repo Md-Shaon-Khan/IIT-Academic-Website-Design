@@ -1,0 +1,128 @@
+.iit-footer {
+  background-color:#000000; /* dark background */
+  color: #fff;
+  padding: 60px 20px 40px; /* top, sides, bottom */
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+/* Container */
+.iit-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Columns layout */
+.iit-footer__columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px; /* spacing between columns */
+  margin-bottom: 40px;
+}
+
+/* Individual column */
+.iit-footer__column {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  
+}
+
+/* Logo */
+.iit-footer__logo img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+/* Info block under logo */
+.iit-footer__info p {
+  font-size: 0.875rem;
+  margin: 4px 0;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Column headings */
+.iit-footer__heading {
+  font-size: 15px;
+  
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Links inside columns */
+.iit-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.iit-footer__links li {
+  margin-bottom: 10px;
+}
+
+.iit-footer__links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.iit-footer__links li a:hover {
+  color: #11446c; /* highlight on hover */
+}
+
+/* Social media icons row */
+.iit-footer__social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.iit-footer__social .social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff; /* icon color */
+  font-size: 18px; /* icon size */
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.iit-footer__social .social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.iit-footer__social .social-icon:hover {
+  background-color: #11446c /* hover effect */
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .iit-footer__columns {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .iit-footer__columns {
+    flex-direction: column; /* stack columns vertically */
+  }
+
+  .iit-footer__social .social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
+}

@@ -1,41 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>IIT Academic Portal – Jahangirnagar University</title>
-    <meta
-      name="description"
-      content="Landing page for the academic section of the Institute of Information Technology (IIT), Jahangirnagar University."
-    />
-
-    <!-- Fonts (loaded here; styling will be added in CSS step) -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Global stylesheet (you will provide in the next step) -->
-    <link rel="stylesheet" href="style.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <!-- Defer script reference for later JS step -->
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="script.js" />
-  </head>
-  <body>
-    <!-- Skip link for accessibility -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <!-- Page wrapper to help layer hero background and overlays -->
-    <div class="page">
-      <!-- Header / Transparent top navigation over hero background -->
-      <header class="site-header" id="site-header" aria-label="Top Navigation">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_project.css">
+    <link rel="stylesheet" href="css/style_question.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+     <link rel="stylesheet" href="css/style_navbar.css">
+</head>
+<body>
+   <header class="site-header" id="site-header" aria-label="Top Navigation">
         <nav class="navbar container-fluid" aria-label="Primary">
           <!-- Left: JU logo linking to university homepage -->
           <a
@@ -46,7 +22,7 @@
             aria-label="Jahangirnagar University (opens in new tab)"
           >
             <img
-              src="images/JU logo.png"
+              src="images/ju logo white.png "
               alt="Jahangirnagar University"
               id="juLogo"
             />
@@ -127,7 +103,7 @@
                   </ul>
                 </li>
                 <li class="dropdown-subitem">
-                  <a href="main project/first year/index.html" class="dropdown-link">Project</a>
+                  <a href="#" class="dropdown-link">Project</a>
                 </li>
               </ul>
             </li>
@@ -361,261 +337,89 @@
           </ul>
         </nav>
       </header>
-
-      <!-- Hero section with Earth-at-night background -->
-      <main id="main-content" class="main" tabindex="-1">
-        <section
-          class="hero"
-          aria-label="Welcome section"
-          style="background-image: url('images/Background.jpg')"
-        >
-          <!-- Optional dark overlay handled in CSS -->
-          <div class="hero__overlay" aria-hidden="true"></div>
-
-          <div class="hero__content container">
-            <h1 class="hero__title">Welcome</h1>
-            <p class="hero__subtitle">IIT Academic Website</p>
-
-            <div class="hero__actions">
-              <a
-                class="btn "
-                href="https://iitju.edu.bd/"
-                target="_blank"
-                rel="noopener"
-                style="background-color:#11446c; color: white; font-size: 20px;"
-              
-                >Main Website</a
-              >
-              <a
-                class="view"
-                href="../View Academic Calendar/index.html"
-                
-                >View Academic Calendar</a
-              >
-              
-            </div>
-
-            <!-- Add Explore button here -->
-          </div>
-        </section>
-
-        <!-- <div class="hero__explore">
-          <a href="../Explore/index.html">
-            <button class="btn btn-outline" aria-label="Explore">
-              Explore
-            </button>
-          </a>
-        </div> -->
-
-        <!--               divider               -->
-        <!-- <div class="divider">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-  </svg>
-</div> -->
-        <!-- Optional anchors for year links; content can be added later -->
-        <section
-          id="year1"
-          class="anchor-spacer"
-          aria-label="First Year anchor"
-        ></section>
-        <section
-          id="year2"
-          class="anchor-spacer"
-          aria-label="Second Year anchor"
-        ></section>
-        <section
-          id="year3"
-          class="anchor-spacer"
-          aria-label="Third Year anchor"
-        ></section>
-        <section
-          id="year4"
-          class="anchor-spacer"
-          aria-label="Fourth Year anchor"
-        ></section>
-
-        <div class="divider">
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-          </svg> -->
+     <!-- 51 Batch -->
+    <div class="container">
+     <h2>51 Batch</h2>
+         <!-- 1st Project -->
+         <div class="project_card">
+            <div class="description">
+            <h3>Project 1</h3>
+            <h5>Library Management</h5>
+            <p>A Java-based system that digitizes manual library operations. Librarians can add, update, or delete books, and students can search, borrow, and return books efficiently.</p>
+             <a href="OOP_project_description_Library.html" class="btn btn-primary" style="background-color: #11446c;">Learn more</a>
         </div>
-        <!-- Discover Section -->
-        <section class="discover">
-          <!-- Content container for text and button -->
-          <div class="discover__content container">
-            <!-- Section Title -->
-            <h2 class="discover__title">
-              Explore <br />
-              The World of Innovation at IIT
-            </h2>
+            <img src="images/library manement system.png" alt="Library project">
+         </div>
 
-            <!-- Description Text -->
-            <p class="discover__text">
-              At IIT, we foster cutting-edge research, advanced technology, and
-              interdisciplinary learning to empower students and shape the
-              leaders of tomorrow.
-            </p>
+     <!-- 2nd Project -->
+      <div class="project_card">
+            <div class="description">
+                <h3>Project 2</h3>
+                <h5>Attendance System</h5>
+                <p>A Java Swing application to automate student attendance. Teachers can mark attendance, generate reports, and track attendance trends easily and accurately.</p>
+                <a href="OOP_project_description_Attendance.html" class="btn btn-primary" style="background-color: #11446c;">Learn more</a>
+     </div>
+            <img src="images/Attendance-management-system.png" alt="Attendance Image">
+         </div>
 
-            <!-- Button linking to official JU website -->
-            <a href="../Explore/index.html" class="btn btn-outline">
-              Discover Our Programs
-            </a>
-          </div>
+      <!-- 3rd Project -->
+      <div class="project_card">
+            <div class="description">
+                <h3>Project 3</h3>
+                <h5>Habit Tracker</h5>
+                <p>A Java-based application to track daily habits. Users can add, update, and monitor habits, view progress, set reminders, and maintain streaks for personal productivity.</p>
+                <a href="OOP_project_description_Habit.html" class="btn btn-primary" style="background-color: #11446c;">Learn more</a>
+         </div>
+            <img src="images/havit traker.avif" alt="Habit Tracker Image">
+         </div>
+    </div>
 
-          <!-- Background video section -->
-          <!-- This video will autoplay, stay muted, and loop infinitely -->
-          <!-- playsinline ensures it works on mobile devices without fullscreen -->
-          <!-- <video class="discover__video" autoplay muted loop playsinline>
-            Video source file inside assets/videos folder -->
-            <!-- <source src="Video/discover background.mp4" type="video/mp4" />
-
-             Fallback text if browser does not support video -->
-            <!-- Your browser does not support the video tag.
-          </video> --> 
-        </section>
-
-        <div class="divider">
-         
+    <!-- 52 Batch -->
+    <div class="container">
+     <h2>52 Batch</h2>
+         <!-- 1st Project -->
+         <div class="project_card">
+            <div class="description">
+            <h3>Project 1</h3>
+            <h5>Online Quiz System</h5>
+            <p>A Java-based application that allows teachers to create and manage quizzes online. Students can take quizzes, submit answers, and get instant scores. The system automates grading and tracks performance.</p>
+             <a href="#" class="btn btn-primary" style="background-color: #11446c;">Learn more</a>
         </div>
+            <img src="images/quiz ui.webp" alt="Quiz System UI">
+         </div>
 
-        <!--About Section-->
-        <!-- About Section -->
-        <section class="about" >
-          <div class="about__container">
-            <!-- Section Title -->
-            <h2 class="about__title">About</h2>
+     <!-- 2nd Project -->
+      <div class="project_card">
+            <div class="description">
+                <h3>Project 2</h3>
+                <h5>Smart To-Do List</h5>
+                <p>A Java-based application to manage daily tasks efficiently. Users can add, edit, and delete tasks, set deadlines, and track progress. The system ensures better time management and helps users stay organized.</p>
+                <a href="#" class="btn btn-primary" style="background-color: #11446c;">Learn more</a>
+     </div>
+            <img src="images/To do list.webp" alt="Attendance Image">
+         </div>
 
-            <!-- Horizontal Flow -->
-            <div class="about__flow">
-              <!-- Segment 1: Purpose -->
-              <div class="about__segment">
-                <button class="about__icon-btn" data-text="purpose">
-                  <i class="fa fa-archive"></i>
-                </button>
-                <h3 class="about__label">Purpose</h3>
-                <p class="about__text hidden-text" id="text-purpose">
-                  To provide IIT students with a centralized, structured archive
-                  of academic questions and projects.
-                </p>
-              </div>
+      <!-- 3rd Project -->
+      <div class="project_card">
+            <div class="description">
+                <h3>Project 3</h3>
+                <h5>Expense Tracker</h5>
+                <p>A Java application to track personal finances. Users can log income and expenses, categorize them, and view monthly reports. The system helps in budgeting and improving financial awareness.</p>
+                <a href="#" class="btn btn-primary" style="background-color: #11446c;">Learn more</a>
+         </div>
+            <img src="images/Traker.avif" alt="Habit Tracker Image">
+         </div>
+    </div>
 
-              <!-- Segment 2: Feature -->
-              <div class="about__segment">
-                <button class="about__icon-btn" data-text="feature">
-                  <i class="fa fa-folder-open"></i>
-                </button>
-                <h3 class="about__label">Feature</h3>
-                <p class="about__text hidden-text" id="text-feature">
-                  Question bank by course and section Project repository with
-                  documentation Smart categorization for quick access.
-                </p>
-              </div>
-
-              <!-- Segment 3: Mission -->
-              <div class="about__segment">
-                <button class="about__icon-btn" data-text="mission">
-                  <i class="fa-solid fa-bullseye"></i>
-                </button>
-                <h3 class="about__label">Mission</h3>
-                <p class="about__text hidden-text" id="text-mission">
-                  To preserve academic resources, foster collaboration, and
-                  inspire continuous innovation within IIT.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div class="divider">
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-          </svg> -->
-        </div>
-        <!--FAQS-->
-        <!--FAQS-->
-        <section class="faqs">
-          <div class="faqs__container">
-            <!-- Left Column: Title + FAQs -->
-            <div class="faqs__left">
-              <h2 class="faqs__title">Frequently Asked Questions</h2>
-
-              <div class="faqs__box">
-                <div class="faq__entry">
-                  <h3 class="faq__question">What is IIT Academic Website</h3>
-                  <div class="faq__answer">
-                    <p>
-                      The IIT Academic Website is a centralized platform for
-                      academic resources.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="faq__entry">
-                  <h3 class="faq__question">Who can upload the question</h3>
-                  <div class="faq__answer">
-                    <p>Only authorized faculty can upload questions.</p>
-                  </div>
-                </div>
-
-                <div class="faq__entry">
-                  <h3 class="faq__question">
-                    Who can upload the Project and Thesis Paper
-                  </h3>
-                  <div class="faq__answer">
-                    <p>
-                      Students can upload projects and thesis papers after
-                      approval.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="faq__entry">
-                  <h3 class="faq__question">How to access past questions</h3>
-                  <div class="faq__answer">
-                    <p>
-                      Past questions are available by course and semester in the
-                      archive.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column: Image -->
-            <div class="faqs__right">
-              <img src="images/computer lab.jpg" alt="FAQ Image" />
-            </div>
-          </div>
-        </section>
-
-        <div class="divider">
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <path fill="#000" d="M0,160L1440,320L1440,0L0,0Z"></path>
-          </svg> -->
-        </div>
-      </main>
-
-      <footer class="iit-footer">
+     <!-- Footer -->
+       <footer class="iit-footer">
         <div class="container">
           <div class="iit-footer__columns">
             <!-- Column 1: Institutional Identity -->
             <div class="iit-footer__column">
               <div class="iit-footer__logo">
                 <img
-                  src="images/iit duplicate logo.jpg"
+                  src="../Home/images/iit duplicate logo.jpg"
                   alt="IIT Jahangirnagar University Logo"
                 />
               </div>
@@ -665,25 +469,20 @@
             <a
               href="https://www.facebook.com/groups/138289376248644"
               class="social-icon"
-              ><i class="fa fa-facebook" aria-hidden="true"></i
+              ><i class="bi bi-facebook" aria-hidden="true"></i
             ></a>
             <a href="#" class="social-icon"
-              ><i class="fa fa-twitter" aria-hidden="true"></i
+              ><i class="bi bi-twitter" aria-hidden="true"></i
             ></a>
             <a
               href="https://www.linkedin.com/groups/14273407/"
               class="social-icon"
-              ><i class="fa fa-linkedin" aria-hidden="true"></i
+              ><i class="bi bi-linkedin" aria-hidden="true"></i
             ></a>
           </div>
         </div>
       </footer>
-    </div>
 
-    <!-- No-JS fallback note (visually hidden in CSS, available for screen readers) -->
-    <div class="sr-only" aria-live="polite">
-      JavaScript is not required to use the Explore panel. Navigation remains
-      accessible.
-    </div>
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

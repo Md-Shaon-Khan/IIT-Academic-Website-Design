@@ -1,0 +1,127 @@
+body {
+    background-color: #f4f7f9;
+    color: #222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 15px;
+    margin-bottom: 50px;
+}
+
+.container h2 {
+    text-align: center;
+    color: #325467;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #325467;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Project Card */
+.project_card {
+    width: 80%;
+    max-width: 950px;
+    background: linear-gradient(135deg, #d6e4ec, #f7f9fb);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effect */
+.project_card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Image */
+/* Image */
+.project_card img {
+    width: 230px;          /* fixed width */
+    height: 230px;         /* fixed height */
+    border-radius: 15px;
+    object-fit: cover;     /* ensures image fills the box without distortion */
+    transition: transform 0.3s ease;
+}
+
+
+.project_card img:hover {
+    transform: scale(1.05);
+}
+
+/* Description */
+.description {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    max-width: 60%;
+}
+
+.description h3 {
+    font-size: 22px;
+    color: #325467;
+    margin: 0;
+}
+
+.description h5 {
+    color: #093d58;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.description p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Button */
+.project_card a {
+    width: 160px;
+    text-align: center;
+    background-color: #325467 !important;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.project_card a:hover {
+    background-color: #24404f !important;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project_card {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .project_card img {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+}

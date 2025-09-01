@@ -1,0 +1,211 @@
+body {
+  padding-top: 90px; /* adjust based on navbar height */
+  
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+
+}
+
+:root {
+  --color-text-dark: #fff;  /* or any dark color you prefer */
+  --color-accent: #11446c;  /* matches your theme */
+}
+
+/* ===============================
+   Header & Navigation
+   =============================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(0, 0, 0); /* semi-transparent */
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  color: rgb(255, 253, 253);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, links right */
+  padding: 1rem 1%; /* small padding for top/bottom, minimal for left/right */
+  position: relative;
+}
+.navbar.container {
+  padding-left: 0; /* remove default left padding */
+  padding-right: 2%; /* optional: right padding ঠিক রাখুন */
+}
+
+.brand {
+  margin-left: 10px;
+  display: flex;
+  align-items: center; /* flush left */
+  text-decoration: none;
+  gap: 10px;
+}
+.nav-item {
+  position: relative; /* required for absolute submenu */
+}
+.brand img {
+  height: 50px; /* larger logo */
+  width: auto;
+  display: block;
+}
+.brand-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff; /* JU’s dark blue shade */
+  white-space: nowrap; /* prevent wrapping */
+}
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  transition: color 0.3s;
+  font-size: 18px;
+}
+.nav-link:hover {
+  color: black ;
+  background-color: white;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(13, 13, 13, 0.95);
+  color: white;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  color: white;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.dropdown-link:hover {
+  background:white;
+  color: #000000;
+}
+
+.nav-item.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Submenu for 1st Semester subjects */
+.dropdown-subitem {
+  position: relative; /* needed for nested submenu */
+}
+
+.dropdown-menu-sub {
+  position: absolute;
+  top: 0;
+  left: auto; /* position to the right of parent */
+  right: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  border-radius: 6px;
+  min-width: 200px;
+  z-index: 1000;
+}
+/* Rightmost dropdown flips to left */
+.nav-item.dropdown:last-child .dropdown-subitem:hover > .dropdown-menu-sub {
+  left: auto; /* remove default left */
+  right: 100%; /* open to the left */
+}
+/* Show nested submenu on hover */
+.dropdown-subitem:hover > .dropdown-menu-sub {
+  display: block;
+}
+
+/* Hamburger Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--color-text-dark);
+}
+
+
+/* ===============================
+   Explore Section
+   =============================== */
+/*.explore-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0; 
+}
+
+.explore-button {
+  width: 60px;     
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.explore-button:hover {
+  background: var(--color-accent);
+  transform: scale(1.1);
+}
+*/
+
+/* ===============================
+   Responsive Design
+   =============================== */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(10, 15, 28, 0.95);
+    flex-direction: column;
+    width: 220px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-menu.active {
+    max-height: 300px;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
