@@ -1,6 +1,6 @@
 /* ===== Navbar Styles ===== */
 .navbar {
-  background: rgba(0, 0, 0, 0.85); /* slightly transparent black */
+  background: rgba(249, 240, 223, 0.85); /* slightly transparent black */
   padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -14,6 +14,7 @@
 .navbar .brand img {
   height: 45px;
   width: auto;
+  
 }
 
 /* Toggle button for mobile */
@@ -30,7 +31,7 @@
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  background-color: #fff;
+  background-color: rgba(245, 244, 242, 0.85);
   transition: 0.3s;
 }
 
@@ -40,12 +41,12 @@
   display: flex;
   gap: 1.2rem;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 /* Nav links */
 .nav-link {
-  color: #ffffff;
+  color:rgba(245, 244, 242, 0.85);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -60,7 +61,7 @@
 .dropdown-menu-sub {
   display: none;
   position: absolute;
-  background: #000 !important;   /* force pure black background */
+  background:rgba(245, 244, 242, 0.85) !important;   /* force pure black background */
   padding: 0.5rem 0;
   border-radius: 6px;
   min-width: 220px;
@@ -73,14 +74,14 @@
 .dropdown-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #fff !important;        /* force white text */
+  color: #000000 !important;        /* force white text */
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
 }
 
 .dropdown-link:hover {
-  background: #111;              /* slightly lighter black */
-  color: #4da3ff !important;     /* light blue on hover */
+  background: #f0ecec;              /* slightly lighter black */
+  color: rgba(0, 0, 0, 0.85) !important;     /* light blue on hover */
 }
 
 
@@ -99,7 +100,7 @@
   top: 0;
   left: auto;        /* reset default */
   right: 100%;       /* open to the left */
-  background: #000 !important;
+  background: rgba(245, 244, 242, 0.85)!important;
   border-radius: 6px;
   min-width: 220px;
 }
@@ -162,7 +163,7 @@
 
 /* Logo */
 .iit-footer__logo img {
-  width: 120px;
+  width:45px;
   margin-bottom: 15px;
 }
 
