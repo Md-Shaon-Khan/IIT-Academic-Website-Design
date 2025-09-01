@@ -1,0 +1,78 @@
+/* General styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding-top: 70px;
+  background: linear-gradient(to bottom, #f8f9fa, #e3eaf2);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+    color: #1b5a74;
+    text-shadow: black 1px 1px 2px;
+}
+
+
+/* Section Titles */
+.section-title {
+  border-left: 5px solid #1b5a74;
+  color: #1b5a74;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Project Image */
+.project-image {
+  max-width: 70%;
+  border: 3px solid #e0e0e0;
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+  max-width: 280px;
+  margin: auto;
+  background: linear-gradient(180deg, #a9c7db, #e3eaf2, #f8f9fa);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Carousel */
+.carousel-wrapper {
+  max-width: 500px;
+  margin: auto;
+  border: 2px solid #e0e0e0;
+  background-color: #fff;
+}
+
+.carousel-inner img {
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-dark {
+  background-color: #1b5a74;
+  border-color: #1b5a74;
+}
+
+.btn-dark:hover {
+  background-color: #164b61;
+  border-color: #164b61;
+}
