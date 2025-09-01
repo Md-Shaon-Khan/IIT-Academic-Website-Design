@@ -1,0 +1,37 @@
+/* General styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+  padding-top: 70px; /* height of navbar */
+}
+
+/* Section Titles */
+.section-title {
+  border-left: 5px solid #0d6efd;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Project Image */
+.project-image {
+  max-width: 70%;
+  border: 3px solid #e0e0e0;
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  font-size: 14px;
+}
