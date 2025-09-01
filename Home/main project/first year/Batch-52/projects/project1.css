@@ -34,16 +34,14 @@ h1 {
 .card {
   border-radius: 12px;
   transition: transform 0.3s ease-in-out;
+  max-width: 280px;
+  margin: auto;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
-/* Footer */
-footer {
-  font-size: 14px;
-}
 
 /* Carousel */
 .carousel-wrapper {
