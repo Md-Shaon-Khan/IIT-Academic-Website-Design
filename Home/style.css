@@ -118,7 +118,7 @@ section.visible {
   position: relative; /* required for absolute submenu */
 }
 .brand img {
-  height: 70px; /* larger logo */
+  height: 50px; /* larger logo */
   width: auto;
   display: block;
 }
