@@ -24,13 +24,7 @@
   <link rel="stylesheet" href="project1.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Project Details</a>
-    </div>
-  </nav>
-
+  
   <!-- Main Container -->
   <main class="container my-5">
     <!-- Header / Top navigation -->
@@ -66,31 +60,42 @@
       </p>
     </section>
 
-    <!-- Features -->
-    <section class="mb-5">
-      <h3 class="section-title">Features</h3>
-      <ul>
-        <li>Generates unique, randomized question sets.</li>
-        <li>Batch-specific customization.</li>
-        <li>Minimizes repetition across exams.</li>
-        <li>User-friendly interface for teachers.</li>
-        <li>Helps maintain fairness in exams.</li>
-      </ul>
-    </section>
+    <!-- Combined Row for Features + Tools -->
+<section class="mb-5">
+  <div class="row align-items-start">
+    <!-- Left Column: Features + Tools -->
+    <div class="col-md-8">
+      <!-- Features -->
+      <div class="mb-4">
+        <h3 class="section-title">Features</h3>
+        <ul>
+          <li>Generates unique, randomized question sets.</li>
+          <li>Batch-specific customization.</li>
+          <li>Minimizes repetition across exams.</li>
+          <li>User-friendly interface for teachers.</li>
+          <li>Helps maintain fairness in exams.</li>
+        </ul>
+      </div>
 
-    <!-- Tools and Technology -->
-    <section class="mb-5">
-      <h3 class="section-title">Tools & Technology</h3>
-      <p>
-        This project was built using the following tools and technologies:
-      </p>
-      <ul>
-        <li><strong>Frontend:</strong> HTML, CSS, Bootstrap</li>
-        <li><strong>Backend:</strong> Java / Python (depending on implementation)</li>
-        <li><strong>Database:</strong> MySQL / SQLite</li>
-        <li><strong>IDE:</strong> VS Code / PyCharm / NetBeans</li>
-      </ul>
-    </section>
+      <!-- Tools & Technology -->
+      <div>
+        <h3 class="section-title">Tools & Technology</h3>
+        <p>This project was built using the following tools and technologies:</p>
+        <ul>
+          <li><strong>Frontend:</strong> HTML, CSS, Bootstrap</li>
+          <li><strong>Backend:</strong> Java / Python (depending on implementation)</li>
+          <li><strong>Database:</strong> MySQL / SQLite</li>
+          <li><strong>IDE:</strong> VS Code / PyCharm / NetBeans</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div class="col-md-4 text-center">
+      <img src="images/project1.png" alt="Feature & Tools Visual" class="img-fluid tall-side-image shadow rounded">
+    </div>
+  </div>
+</section>
 
     <!-- Impact -->
     <section class="mb-5">
