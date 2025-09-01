@@ -128,14 +128,20 @@ h3 a{
   --travel: 0px;
   --direction: 1;
   position: relative;
-  overflow: hidden;
+  overflow-x: auto; /* allow manual horizontal scroll */
+  overflow-y: hidden; /* block vertical scroll */
   width: 100%;
   padding-bottom: 10px;
-
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
+  
   -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
           mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
 }
-
+/* Hide scrollbar for Chrome, Safari, Edge */
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
 .scroll-row .marquee-track {
   display: inline-flex;
   gap: var(--gap);
