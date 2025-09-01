@@ -36,6 +36,7 @@ h1 {
   transition: transform 0.3s ease-in-out;
   max-width: 280px;
   margin: auto;
+  background: linear-gradient(180deg, #a9c7db, #e3eaf2, #f8f9fa);
 }
 
 .card:hover {
@@ -64,4 +65,14 @@ h1 {
   border-radius: 50%;
   border: 2px solid #dee2e6;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-dark {
+  background-color: #1b5a74;
+  border-color: #1b5a74;
+}
+
+.btn-dark:hover {
+  background-color: #164b61;
+  border-color: #164b61;
 }
