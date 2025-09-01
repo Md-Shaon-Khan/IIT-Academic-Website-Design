@@ -13,6 +13,17 @@ function fixImagePaths(el, batchFile) {
   });
 }
 
+// ✅ Fix relative <a href> links
+function fixLinkPaths(el, batchFile) {
+  const basePath = batchFile.substring(0, batchFile.lastIndexOf("/") + 1);
+  el.querySelectorAll("a").forEach(a => {
+    const href = a.getAttribute("href");
+    if (href && !href.startsWith("http") && !href.startsWith("/")) {
+      a.setAttribute("href", basePath + href);
+    }
+  });
+}
+
 // Remove IDs from cloned nodes to avoid duplicates
 function stripIds(root) {
   if (root.nodeType !== 1) return;
@@ -48,7 +59,6 @@ function measureFirstSetWidth(track, count) {
 // Set CSS variables for animation
 function setupMarquee(containerEl, trackEl, firstSetCount, direction = 1) {
   const travel = measureFirstSetWidth(trackEl, firstSetCount);
-
   containerEl.style.setProperty("--travel", travel + "px");
   containerEl.style.setProperty("--direction", direction);
 
@@ -66,13 +76,13 @@ function duplicateFirstSet(trackEl, firstSetCount) {
   originals.forEach(node => {
     const clone = node.cloneNode(true);
     stripIds(clone);
-    trackEl.appendChild(clone); // ✅ always append, even for reverse
+    trackEl.appendChild(clone);
   });
 }
 
 // Debounce utility
 function debounce(fn, ms = 150) {
-  let t; 
+  let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
 }
 
@@ -101,29 +111,24 @@ function loadBatchProjects(batchFile, containerId, direction = 1) {
       if (!container) return;
 
       container.innerHTML = "";
-      container.dataset.direction = direction; // ✅ mark direction
+      container.dataset.direction = direction;
       const track = document.createElement("div");
       track.className = "marquee-track";
       container.appendChild(track);
 
-      // Preload cards + images before appending
       const cardPromises = Array.from(cards).map(card => {
         const clone = card.cloneNode(true);
         fixImagePaths(clone, batchFile);
+        fixLinkPaths(clone, batchFile); // ✅ Fix links too
         stripIds(clone);
         return waitForImages(clone).then(() => track.appendChild(clone));
       });
 
       Promise.all(cardPromises).then(() => {
         const firstSetCount = track.children.length;
-
-        // Duplicate first set for infinite scroll
         duplicateFirstSet(track, firstSetCount);
-
-        // Set direction + setup animation
         setupMarquee(container, track, firstSetCount, direction);
 
-        // Recalculate on window resize
         const recalc = debounce(
           () => setupMarquee(container, track, firstSetCount, direction),
           200
@@ -134,7 +139,7 @@ function loadBatchProjects(batchFile, containerId, direction = 1) {
     .catch(err => console.error("Error loading batch:", err));
 }
 
-// Recalculate marquee on pageshow (after reload/back)
+// Recalculate marquee on pageshow
 window.addEventListener("pageshow", () => {
   document.querySelectorAll(".scroll-row .marquee-track").forEach(track => {
     const container = track.parentElement;
