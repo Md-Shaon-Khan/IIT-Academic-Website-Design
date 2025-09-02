@@ -19,6 +19,8 @@ body{
 }
  .section-title a{
   color: #11446c;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .left-line {

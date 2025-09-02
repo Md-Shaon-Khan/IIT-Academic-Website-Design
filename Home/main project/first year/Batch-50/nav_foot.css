@@ -74,7 +74,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(1, 5, 18, 0.9); /* semi-transparent */
+  background: rgb(0, 0, 0); /* semi-transparent */
   z-index: 999;
   backdrop-filter: blur(6px);
 }
