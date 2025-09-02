@@ -4,14 +4,13 @@ body {
   line-height: 1.6;
   color: #333;
   padding-top: 70px;
-  background: linear-gradient(to bottom, #f8f9fa, #e3eaf2);
+  background: linear-gradient(to bottom, #f8f9fa, #f1f6fd);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 h1 {
     color: #1b5a74;
-    text-shadow: black 1px 1px 2px;
 }
 
 
