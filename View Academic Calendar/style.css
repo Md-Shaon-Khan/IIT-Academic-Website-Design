@@ -40,7 +40,7 @@ body {
     border-radius: 8px;
     padding: 10px;
     background-color: #fff;
-    width: 280px; /* Adjust width as needed */
+    width: 280px;
 
     
 }
@@ -65,13 +65,13 @@ body {
 /* Off Days */
 .off-red {
     color: #fff;
-    background-color: #e74c3c; /* Red */
+    background-color: #e74c3c; 
     font-weight: bold;
 }
 
 .off-blue {
     color: #fff;
-    background-color: #3498db; /* Blue */
+    background-color: #3498db; 
     font-weight: bold;
 }
 
@@ -158,16 +158,8 @@ body {
         margin-bottom: 20px;
     }
 }
-/* Right Section: Exam Dates + Notices */
-/* .right-section {
-    flex: 2;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-} */
 
-/* Exam Table */
+
 /* ==========================
    Exam Dates Table
 ========================== */
@@ -211,7 +203,7 @@ body {
 }
 
 .exam-dates tbody tr:hover {
-    background-color: #f9e6e6; /* subtle red highlight on hover */
+    background-color: #f9e6e6; 
     transform: scale(1.01);
     transition: 0.3s;
 }
@@ -302,7 +294,7 @@ body {
 }
 
 .iit-events tbody tr:hover {
-    background-color: #f0f9ff; /* subtle blue highlight on hover */
+    background-color: #f0f9ff;
     transform: scale(1.01);
     transition: 0.3s;
 }
@@ -355,7 +347,7 @@ body {
 
 /* Hover effect */
 .notices-updates ul li:hover {
-    color: #e67e22; /* Orange highlight on hover */
+    color: #e67e22; 
     transform: scale(1.02);
     cursor: pointer;
 }
