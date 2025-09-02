@@ -48,7 +48,7 @@ body {
   position: relative; /* required for absolute submenu */
 }
 .brand img {
-  height: 50px; /* larger logo */
+  height: 70px; /* larger logo */
   width: auto;
   display: block;
 }
