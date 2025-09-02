@@ -228,10 +228,10 @@ section header p {
 /* ====== Events Section Background ====== */
 #events {
   padding: 60px 20px;
-  background-color: #f1f4f8; /* light neutral background for the whole section */
-  border-radius: 10px; /* optional subtle rounding for section edges */
-  max-width: 1162px; /* optional width limit */
-  margin: 50px auto; /* center the section on the page */
+  background-color: #f1f4f8; 
+  border-radius: 10px;
+  max-width: 1162px;
+  margin: 50px auto;
 }
 
 /* Header styling */
@@ -272,7 +272,7 @@ section header p {
 
 /* Individual Card */
 .events-category .card {
-  background-color: white; /* card background stays white */
+  background-color: white;
   border-radius: 10px;
   padding: 20px;
   width: 280px;
@@ -299,11 +299,11 @@ section header p {
 
 /* Optional: Different border-top for Upcoming vs Completed */
 .events-category:nth-of-type(1) .card {
-  border-top: 4px solid #28a745; /* green for upcoming */
+  border-top: 4px solid #28a745;
 }
 
 .events-category:nth-of-type(2) .card {
-  border-top: 4px solid #6c757d; /* gray for completed */
+  border-top: 4px solid #6c757d; 
 }
 
 /* ====== Footer ====== */
@@ -340,7 +340,7 @@ footer a:hover {
 /*Subject overview*/
 
 /* Section wrapper */
-/* Section wrapper */
+
 #semester-section {
   padding: 60px 30px;
   background: #fdfcf9;

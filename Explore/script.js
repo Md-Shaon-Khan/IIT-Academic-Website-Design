@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>${desc}</p>
       `;
 
-      // Optional: smooth scroll to description box
+     
       descriptionBox.scrollIntoView({ behavior: "smooth", block: "center" });
     });
   });
