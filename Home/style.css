@@ -37,7 +37,8 @@ body {
   font-family:'Times New Roman', Times, serif;
   line-height: 1.6;
   color: var(--color-text-light);
-  background: linear-gradient(135deg, #8fadd0, #f3f4f7);
+  background: linear-gradient(135deg, #fefefe, #f3f4f7);
+  background-repeat: no-repeat;
 }
 
   /* ===== Smooth Scroll Animation for Sections ===== */
@@ -410,6 +411,7 @@ section.visible {
   justify-content: center; /* Center text horizontally */
   color: #000000; /* White text for contrast */
   overflow: hidden; /* Hide any video overflow */
+  background-color: #e8eff5;
 }
 
 /* ===== Background Video ===== */
@@ -461,8 +463,9 @@ section.visible {
 
 /* ---------- About Section ---------- */
 /* About Section */
+/* About Section Base */
+/* About Section Base */
 .about {
-  background: url("images/library.jpg") no-repeat center center;
   background-size: cover;
   position: relative;
   color: #fff;
@@ -477,24 +480,49 @@ section.visible {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(8px);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0); /* start transparent */
   z-index: 0;
+  transition: background-color 1.5s ease;
 }
 
+/* Overlay fade-in when active */
+.about.animate::before {
+  background-color: rgba(0,0,0,0.5); /* final semi-transparent */
+}
+
+/* Left-to-right fade animation */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* About Container */
 .about__container {
   position: relative;
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
+
+  opacity: 0; /* hidden before scroll */
+  transform: translateX(-50px);
 }
 
+/* Section Title */
 .about__title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 60px;
   color: #fff;
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
 /* Horizontal flow */
@@ -525,14 +553,17 @@ section.visible {
   text-align: center;
   position: relative;
   z-index: 2;
+
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
-/* Icon button (less bright circle) */
+/* Icon button */
 .about__icon-btn {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #e0e0e0; /* less bright / soft gray */
+  background-color: #e0e0e0;
   border: none;
   display: flex;
   justify-content: center;
@@ -541,14 +572,9 @@ section.visible {
   cursor: pointer;
   font-size: 2rem;
   color: #333;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
 
-.about__icon-btn:hover {
-  transform: scale(1.2);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  background-color: #d1d1d1; /* subtle hover change */
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
 /* Label under icon */
@@ -557,26 +583,51 @@ section.visible {
   font-weight: 600;
   color: #fff;
   margin-bottom: 5px;
+
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
-/* Hidden text initially */
+/* Paragraph text */
 .hidden-text {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
-  color: #fff;
   font-size: 1rem;
   line-height: 1.6;
-  margin-top: 0;
+  color: #fff;
+  margin-top: 15px;
+
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
-/* Show text when active */
-.hidden-text.active {
-  max-height: 200px; /* adjust for longer text */
-  opacity: 1;
-  margin-top: 15px;
+/* Animate elements when container has "animate" class */
+.about.animate .about__container,
+.about.animate .about__title,
+.about.animate .about__segment,
+.about.animate .about__segment .about__icon-btn,
+.about.animate .about__segment .about__label,
+.about.animate .about__segment .hidden-text {
+  animation: fadeInLeft 1s ease forwards;
 }
+
+/* Staggered delays for segments */
+.about.animate .about__segment:nth-child(1) { animation-delay: 0.3s; }
+.about.animate .about__segment:nth-child(2) { animation-delay: 0.6s; }
+.about.animate .about__segment:nth-child(3) { animation-delay: 0.9s; }
+
+/* Staggered delays for icons */
+.about.animate .about__segment:nth-child(1) .about__icon-btn { animation-delay: 0.4s; }
+.about.animate .about__segment:nth-child(2) .about__icon-btn { animation-delay: 0.7s; }
+.about.animate .about__segment:nth-child(3) .about__icon-btn { animation-delay: 1s; }
+
+/* Staggered delays for labels */
+.about.animate .about__segment:nth-child(1) .about__label { animation-delay: 0.5s; }
+.about.animate .about__segment:nth-child(2) .about__label { animation-delay: 0.8s; }
+.about.animate .about__segment:nth-child(3) .about__label { animation-delay: 1.1s; }
+
+/* Staggered delays for paragraph text */
+.about.animate .about__segment:nth-child(1) .hidden-text { animation-delay: 0.6s; }
+.about.animate .about__segment:nth-child(2) .hidden-text { animation-delay: 0.9s; }
+.about.animate .about__segment:nth-child(3) .hidden-text { animation-delay: 1.2s; }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
@@ -600,8 +651,6 @@ section.visible {
     display: none;
   }
 }
-
-
 /* ---------- FAQ Section ---------- */
 
 .faqs {
@@ -631,7 +680,7 @@ section.visible {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(6px);
-  background: linear-gradient(135deg, #8fadd0, #cdd6e8, #8fa1c7);
+  background: linear-gradient(135deg, #e8eff5);
   z-index: 0;
 }
 

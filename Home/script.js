@@ -61,3 +61,22 @@ iconButtons.forEach(btn => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const aboutSection = document.querySelector(".about");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aboutSection.classList.add("animate"); // Add class to trigger CSS animation
+          observer.unobserve(aboutSection); // Stop observing
+        }
+      });
+    },
+    { threshold: 0.2 } // Trigger when 20% of section is visible
+  );
+
+  observer.observe(aboutSection);
+});
+
