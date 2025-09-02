@@ -35,17 +35,7 @@ document.querySelectorAll(".faq__entry").forEach((faq) => {
     });
   });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const icons = document.querySelectorAll(".about__icon");
 
-//   window.addEventListener("scroll", () => {
-//     const rotation = window.scrollY % 360; // scroll position mapped to degrees
-//     icons.forEach((icon, i) => {
-//       // each icon rotates slightly offset
-//       icon.style.transform = `rotate(${rotation + i * 60}deg)`;
-//     });
-//   });
-// });
 
 const iconButtons = document.querySelectorAll(".about__icon-btn");
 
@@ -69,12 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          aboutSection.classList.add("animate"); // Add class to trigger CSS animation
-          observer.unobserve(aboutSection); // Stop observing
+          aboutSection.classList.add("animate"); 
+          observer.unobserve(aboutSection); 
         }
       });
     },
-    { threshold: 0.2 } // Trigger when 20% of section is visible
+    { threshold: 0.2 }
   );
 
   observer.observe(aboutSection);
