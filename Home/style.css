@@ -242,27 +242,16 @@ section.visible {
   text-align: center;
   
 }
-/* .hero__video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  filter: brightness(70%) blur(2px);  makes video dim & not fully clear 
-  object-fit: cover;  makes sure the video covers the section 
-  z-index: -2;  keeps video at the very back 
-} */
+
 
 .hero__overlay {
   position: absolute;
-  /*  inset: 0;
-  background: rgba(0, 0, 0, 0.55);*/
+
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35); /* darker overlay for readability */
+  background: rgba(0, 0, 0, 0.35); 
   z-index: 0;
 }
 .hero__content {
@@ -275,10 +264,10 @@ section.visible {
 
 .hero__explore {
   display: flex;
-  justify-content: center; /* center horizontally */
-  position: absolute; /* allow bottom positioning */
-  bottom: 45px; /* 10–15px from bottom */
-  width: 100%; /* full width to center flex */
+  justify-content: center; 
+  position: absolute;
+  bottom: 45px; 
+  width: 100%; 
 }
 
 .hero__explore .btn {
@@ -312,7 +301,7 @@ section.visible {
 
 .hero__actions {
   display: flex;
-  justify-content: flex-start; /* align left */
+  justify-content: flex-start; 
   align-items: flex-start;
   gap: 1rem;
   flex-wrap: wrap;
@@ -355,31 +344,6 @@ section.visible {
 }
 
 /* ===============================
-   Explore Section
-   =============================== */
-/*.explore-button-container {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0; 
-}
-
-.explore-button {
-  width: 60px;     
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid var(--color-accent);
-  background: transparent;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.explore-button:hover {
-  background: var(--color-accent);
-  transform: scale(1.1);
-}
-*/
-
-/* ===============================
    Responsive Design
    =============================== */
 @media (max-width: 768px) {
@@ -404,13 +368,13 @@ section.visible {
 
 /* ===== Discover Section Styling ===== */
 .discover {
-  position: relative; /* Needed so video and text can be layered */
-  height: 100vh; /* Full screen height */
+  position: relative; 
+  height: 100vh; 
   display: flex;
-  align-items: center; /* Center text vertically */
-  justify-content: center; /* Center text horizontally */
-  color: #000000; /* White text for contrast */
-  overflow: hidden; /* Hide any video overflow */
+  align-items: center; 
+  justify-content: center; 
+  color: #000000; 
+  overflow: hidden; 
   background-color: #e8eff5;
 }
 
@@ -419,19 +383,19 @@ section.visible {
   position: absolute; /* Place video behind text */
   top: 0;
   left: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  object-fit: cover; /* Crop video like background image */
-  z-index: -1; /* Push behind content */
-  filter: brightness(60%); /* Darken video for readability */
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  z-index: -1; 
+  filter: brightness(60%); 
 }
 
 /* ===== Content (text & button) ===== */
 .discover__content {
-  position: relative; /* Keep text above video */
-  max-width: 800px; /* Limit width of content */
-  text-align: center; /* Center align text */
-  z-index: 1; /* Ensure it's above the video */
+  position: relative;
+  max-width: 800px;
+  text-align: center; 
+  z-index: 1; 
 }
 
 /* Title styling */
@@ -462,9 +426,8 @@ section.visible {
 }
 
 /* ---------- About Section ---------- */
-/* About Section */
-/* About Section Base */
-/* About Section Base */
+
+
 .about {
   background-size: cover;
   position: relative;
@@ -480,14 +443,14 @@ section.visible {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(8px);
-  background-color: rgba(0,0,0,0); /* start transparent */
+  background-color: rgba(0,0,0,0); 
   z-index: 0;
   transition: background-color 1.5s ease;
 }
 
 /* Overlay fade-in when active */
 .about.animate::before {
-  background-color: rgba(0,0,0,0.5); /* final semi-transparent */
+  background-color: rgba(0,0,0,0.5); 
 }
 
 /* Left-to-right fade animation */
@@ -655,7 +618,7 @@ section.visible {
 
 .faqs {
   position: relative;
-  padding: 60px 20px; /* section padding */
+  padding: 60px 20px;
   
   color: #fff;
   font-family: 'Times New Roman', Times, serif;
@@ -722,7 +685,7 @@ section.visible {
 
 /* Section title */
 .faqs__title {
-  text-align: left; /* align left in new layout */
+  text-align: left; 
   font-size: 2.2rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
@@ -760,7 +723,7 @@ section.visible {
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* optional: small side padding */
+  padding: 0 20px; 
 }
 
 /* Left column */
@@ -869,9 +832,9 @@ section.visible {
 
 /* ---------- Footer Section ---------- */
 .iit-footer {
-  background-color:#000000; /* dark background */
+  background-color:#000000; 
   color: #fff;
-  padding: 60px 20px 40px; /* top, sides, bottom */
+  padding: 60px 20px 40px; 
   font-family: "Roboto", sans-serif;
   position: relative;
 }
@@ -887,7 +850,7 @@ section.visible {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 40px; /* spacing between columns */
+  gap: 40px;
   margin-bottom: 40px;
 }
 
@@ -944,7 +907,7 @@ section.visible {
 }
 
 .iit-footer__links li a:hover {
-  color: #11446c; /* highlight on hover */
+  color: #11446c;
 }
 
 /* Social media icons row */
@@ -962,8 +925,8 @@ section.visible {
   height: 36px;
   border-radius: 50%;
   background-color: #333;
-  color: #fff; /* icon color */
-  font-size: 18px; /* icon size */
+  color: #fff;
+  font-size: 18px; 
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -975,7 +938,7 @@ section.visible {
 }
 
 .iit-footer__social .social-icon:hover {
-  background-color: #11446c /* hover effect */
+  background-color: #11446c 
 }
 
 /* ---------- Responsive ---------- */
@@ -987,7 +950,7 @@ section.visible {
 
 @media (max-width: 768px) {
   .iit-footer__columns {
-    flex-direction: column; /* stack columns vertically */
+    flex-direction: column; 
   }
 
   .iit-footer__social .social-icon {
