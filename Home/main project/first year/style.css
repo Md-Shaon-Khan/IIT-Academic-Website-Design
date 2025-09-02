@@ -22,9 +22,8 @@ main .container {
 .section-title {
   font-size: 2.5rem;
   font-weight: bolder;
-  color: #222579;
+  color: #11446c;;
   font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 1px 1px 2px black; /* showing error fixed */
 }
 .filter-buttons .btn {
   margin: 0 5px;
@@ -42,10 +41,10 @@ main .container {
 }
 
 h3 a{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #130b86;
+  font-family:'Times New Roman', Times, serif;
+  color: #11446c;
   font-size: 2rem;
-  text-shadow: 1px 1px 2px black;
+  font-weight: bold;
 }
 .horizontal-line {
   height: 6px; /* Increased thickness */
